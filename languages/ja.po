@@ -1,0 +1,33 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ki-orion\n"
+"Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
+"POT-Creation-Date: 2016-08-06 22:36+0900\n"
+"PO-Revision-Date: 2016-08-06 22:41+0900\n"
+"Last-Translator: Akinori Kawamitsu <kawamitsu.akinori@gmail.com>\n"
+"Language-Team: Komitsuboshi Interface <kawamitsu.akinori@gmail.com>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: home.php:5
+msgid "recent posts"
+msgstr "最新記事"
+
+#: home.php:22
+msgid "&laquo; Previous"
+msgstr "&laquo;前へ"
+
+#: home.php:23
+msgid "Next &raquo;"
+msgstr "次へ  &raquo;"
+
+#: home.php:34
+msgid "category"
+msgstr "カテゴリー"

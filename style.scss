@@ -1,0 +1,26 @@
+/*
+Theme name: ki-classic
+Theme URI: https://github.com/akinori-kawamitsu/ki-classic
+Author: akinori kawamitsu
+Author URI: http://komitsuboshi.com
+Description: 
+Version: 1.1
+License: MIT License
+License URI: https://opensource.org/licenses/MIT
+Text Domain: ki-classic
+*/
+
+@charset "utf-8";
+@import "scss/_reset.scss";
+@import "scss/_base.scss";
+@import "scss/_grid.scss";
+
+@import "scss/component/_breadcrumb";
+@import "scss/component/_header-fix";
+@import "scss/component/_hamburger";
+@import "scss/component/_drawer-wp";
+@import "scss/component/_embed";
+
+@import "scss/_wordpress.scss";
+@import "scss/_custom.scss";
+@import "scss/_utility.scss";

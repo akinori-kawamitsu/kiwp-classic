@@ -1,0 +1,358 @@
+@charset "utf-8";
+@import "_parameter";
+/* 以下のウェブフォントは不要なものは記述を削除またはコメントアウトすること。 */
+/* Noto Sans */
+@font-face {
+    font-family: "noto-sans";
+    src: url(./font/Noto_Sans_Subset/NotoSansJP-Light-Subset.woff2) format("woff2");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "noto-sans";
+    src: url(./font/Noto_Sans_Subset/NotoSansJP-Medium-Subset.woff2) format("woff2");
+    font-weight: bold;
+}
+// @font-face {
+//     font-family: "noto-sans";
+//     src: url(./font/Noto_Sans_Subset/NotoSansJP-Bold-Subset.woff2) format("woff2");
+//     font-weight: bold;
+// }
+/* Noto Serif */
+@font-face {
+    font-family: "noto-serif";
+    src: url(./font/Noto-Serif-Subset/NotoSerifJP-Regular-Subset.woff2) format("woff2");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "noto-serif";
+    src: url(./font/Noto-Serif-Subset/NotoSerifJP-Bold-Subset.woff2) format("woff2");
+    font-weight: bold;
+}
+/* Kosugi Maru Goshic */
+@font-face {
+    font-family: "kosugimaru";
+    src: url(./font/Kosugi_Maru_Subset/KosugiMaru-Regular-Subset.woff2) format("woff2");
+}
+/* Zen Old Mincho */
+@font-face {
+    font-family: "zen-mincho";
+    src: url(./font/ZenOld_Mincho_Subset/ZenOldMincho-R-subset.woff2) format("woff2");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "zen-mincho";
+    src: url(./font/ZenOld_Mincho_Subset/ZenOldMincho-B-subset.woff2) format("woff2");
+    font-weight: bold;
+}
+/* Font awesome */
+@font-face {
+    font-family: "fa";
+    src: url(./font/fa-regular-400.woff2) format("woff2");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "fa";
+    src: url(./font/fa-solid-900.woff2) format("woff2");
+    font-weight: bold;
+}
+/* CSS変数設定 */
+:root {
+    --fs-12: 0.75rem;
+    --fs-13: 0.8125rem;
+    --fs-14: 0.875rem;
+    --fs-16: 1rem;
+    --fs-18: 1.125rem;
+    --fs-20: 1.25rem;
+    --fs-24: 1.5rem;
+    --fs-28: 1.75rem;
+    --fs-32: 2rem;
+    --fs-36: 2.25rem;
+    --fs-40: 2.5rem;
+    --fs-p:  1rem;
+    --fs-small: 0.0875rem;
+    font-size: var(--fs-p);
+
+    --font-serif: "noto-serif", serif;
+    --font-sanserif: "noto-sans", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
+    --font-marugo: "kosugimaru", sans-serif;
+    --font-mono: Consolas, "Courier New", Courier, Monaco, Osaka-mono, "MS Gothic", monospace;
+    
+    --color-base: #FFF;
+    --color-text: #000;
+	--color-text-reverse: #FFF;
+    --color-theme: hsl(240,100%,37%);
+    --color-main: hsl(105,100%,20%);
+    --color-accent: hsl(15,100%,40%);
+    --color-strong: hsl(355,65%,40%);
+    --dark-base: #444;
+    --dark-text: #FFF;
+    --dark-theme: hsl(190,90%,60%);
+    --dark-main: hsl(105,60%,65%);
+    --dark-accent: hsl(15,100%,80%);
+    --dark-strong: hsl(350,100%,80%);
+
+	--box-shadow: 1px 1px 8px hsl(0, 0%, 50%);
+}
+/* style base */
+section {
+	clear: both;
+}
+
+main::after {
+	@include clearfix;
+}
+
+code {
+	overflow-x: scroll;
+	font-size: $font_small;
+	font-family: $font_code;
+	white-space: pre;
+}
+
+blockquote {
+	margin: 10px;
+	padding: 10px;
+	border-left: $color_textdisable 4px solid;
+	color: $color_textlight;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table-fix {
+	table-layout: fixed;
+}
+
+thead {
+	background-color: $color_main;
+}
+
+th, td {
+	border: 1px solid $color_textlight;
+	padding: 0 3px;
+	empty-cells: show;
+}
+
+ul, ol {
+	padding-left: 2em;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+:where(a) {
+	&:link, &:visited{
+		color: $color_link;
+		text-decoration: none;
+	}
+	&:hover, &:active {
+		opacity: $a_opacity;
+		-ms-filter: "#{$a_filter}";
+	}
+}
+
+img {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	padding-top: (($line_height - 1)/2) + em;
+}
+
+address {
+	font-style: normal;
+}
+
+.aligncenter {
+	display: block;
+	margin: 0 auto 10px;
+	text-align: center;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 $margin_sp_col 10px 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 10px $margin_sp_col;
+}
+a[target="_blank"]::after {
+	font-family: "fa";
+	content: "\f35d";
+	font-weight: 900;
+	display: inline-block;
+	width: 0.9em;
+	height: 0.9em;
+	margin-left: 0.3em;
+	color: inherit;
+}
+@media screen and (min-width:$tab) {
+	img.alignleft, img.alignright {
+		max-width: 50%;
+	}
+}
+
+//　要素のあとに改行を入れるクラス　br
+.br {
+	float: none;
+	display: block;
+	margin: 0;
+	&::after {
+		content: "\A";
+		white-space: pre;
+	}
+}
+
+:where(nav), :where(nav) ul, :where(nav) li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+}
+
+@media screen and (max-width:$tabmax) {
+//　tabサイズで画像の回り込みを解消するクラス　br-tab
+	.alignleft.br-tab, .alignright.br-tab {
+		float: none;
+		display: block;
+		max-width: 100%;
+		margin: 0;
+		&::after {
+			content: "\A";
+			white-space: pre;
+		}
+	}
+//  tabサイズで中央配置にする　tab-center
+	.tab-center, img.alignleft.tab-center, img.alignright.tab-center {
+		float: none;
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width:$sp) {
+//　spサイズで画像の回り込みを解消する。（デフォルト設定）
+	img.alignleft, img.alignright {
+		float: none;
+		display: block;
+		margin: 0;
+		position: relative;
+		right: 0;
+		&::after {
+			content: "\A";
+			white-space: pre;
+		}
+	}
+//　spサイズでも画像の最大幅を50%にして、回り込みを有効にするクラス　br-no
+	img.alignleft.br-no {
+		float: left;
+		display: inline;
+		max-width: 50%;
+		margin: 0  $margin_sp_col 0 0;
+		&::after {
+			content: "";
+			white-space: pre;
+		}
+	}
+	img.alignright.br-no {
+		float: right;
+		display: inline;
+		max-width: 50%;
+		margin: 0 0 0  $margin_sp_col;
+		&::after {
+			content: "";
+			white-space: pre;
+		}
+	}
+//  spサイズで中央配置にする　sp-center
+	.sp-center, img.alignleft.sp-center, img.alignright.sp-center {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+.container {
+	width: 100%;
+	max-width: $container;
+	margin: 0 auto;
+}
+
+@media screen and (max-width:$container) {
+	.container {
+		padding: 0 5px;
+	}
+}
+
+.clear {
+	clear: both;
+}
+
+.clearfix::after {
+	@include clearfix;
+}
+
+.list-style-none {
+	list-style: none;
+	padding: 0;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-justyfy {
+	text-align: justify;
+}
+
+.caption {
+	max-width: 100%;
+	box-sizing: content-box;
+	line-height: 1.2;
+	display: block;
+	margin-bottom: $margin_sp_row;
+}
+
+.caption-img {
+	display: inline-block;
+	max-width: 100%;
+}
+
+.caption-img > img {
+	max-width: 100%;
+}
+
+.caption-text {
+	display: inline;
+   font-size: 14px;
+}
+
+.table {
+	display: table;
+}
+
+.table-cell {
+	display: table-cell;
+}
+
+.middle-container {
+	display: table;
+}
+
+.middle-item {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
