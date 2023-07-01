@@ -1888,6 +1888,17 @@ kbd {
   margin-top: 40px;
   background-color: #EEE;
 }
+.footer h3 {
+  margin: 0;
+  font-size: var(--fs-20);
+  text-align: center;
+}
+
+.footer-container {
+  width: 960px;
+  max-width: 100%;
+  margin: auto;
+}
 
 /* ボタン */
 .button-link {
