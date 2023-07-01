@@ -1,4 +1,4 @@
-# kiwp-classic 1.1
+# kiwp-classic 1.2
 WordPressクラシックテーマ標準テンプレート
 
 ki-orion 1.0 よりフォーク
@@ -68,3 +68,9 @@ alignleft, arignrightで画像に回り込みを設定した場合、画像が�
 
 ## var 1.1
 + 原型完成
+
+## var 1.2
++ header-image 未設定時の処理追加
++ ショートコード [cat_list cat="" num="" title=""] および [cat_tile cat="" num="" title=""] で投稿記事・固定ページ内にカテゴリー一覧を出力する機能を追加。
++ 固定ページのキービジュアル（アイキャッチ画像）にスマートフォン用の画像を登録できる機能を追加。
++ ショートコード [img file="" alt=""] により、テーマフォルダ内の img フォルダにある画像を出力する機能を追加。file="example.jpg" alt="代替テキスト" である。

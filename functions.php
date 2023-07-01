@@ -294,4 +294,61 @@ function ki_taglist(){
 add_shortcode('taglist','ki_taglist');
 
 
+// 固定カスタムフィールドボックス
+function add_store_fields() {
+    //add_meta_box(表示される入力ボックスのHTMLのID, ラベル, 表示する内容を作成する関数名, 投稿タイプ, 表示方法)
+    //第4引数のpostをpageに変更すれば固定ページにオリジナルカスタムフィールドが表示されます(custom_post_typeのslugを指定することも可能)。
+    //第5引数はnormalの他にsideとadvancedがあります。
+    //add_meta_box( 'HTML ID', 'ラベル', '関数名', '投稿タイプ', '表示方法');
+    add_meta_box('kv', 'キービジュアル(SP)', 'page_kv_fields', array('page','post'), 'side');
+}
+add_action('admin_menu', 'add_store_fields');
+
+// sp用キービジュアルの登録フィールド
+function page_kv_fields() {
+    global $post;
+    if (get_post_meta($post->ID, 'page_kv', true)) {
+        echo '<p><img src="'.get_post_meta($post->ID, 'page_kv', true).'" style="max-width:100%; height:auto;"></p>';
+    }
+    echo '<p>URL:<input type="text" name="page_kv" value="'.get_post_meta($post->ID, 'page_kv', true).'" size="30" /></p><p>スマートフォン用キービジュアル画像のリンクURLを入力してください。</p>
+    <p><label><input type="checkbox" name="page_kv_clear" value="clear">画像をクリアする</label></p>';
+}
+function save_store_fields($post_id) {
+    //キービジュアルの保存
+    if (!empty($_POST['page_kv'])) {
+        update_post_meta($post_id, 'page_kv', $_POST['page_kv']);
+    }
+    if (!empty($_POST['page_kv_clear'])) {
+        delete_post_meta($post_id, 'page_kv');
+    }
+}
+add_action('save_post', 'save_store_fields');
+
+//カスタムフィールドのデータがエクスポートできない問題対策
+add_filter('wxr_export_skip_postmeta', '__return_false', 999);
+
+
+//  カテゴリーの記事一覧:リスト形式 [cat-list cat="slug" num="" title=""]または[cat-list slug num title]
+function ki_archive_list($atts, $content = null) {
+    ob_start();
+	include ( get_theme_root() . '/' . get_stylesheet() .'/phpmodule/cat_list.php');
+    return ob_get_clean();
+}
+add_shortcode('cat-list','ki_archive_list');
+
+//  カテゴリーの記事一覧:リスト形式 [cat-tile cat="slug" num="" title=""]または[cat-tile slug num title]
+function ki_archive_tile($atts, $content = null) {
+    ob_start();
+	include ( get_theme_root() . '/' . get_stylesheet() .'/phpmodule/cat_tile.php');
+    return ob_get_clean();
+}
+add_shortcode('cat-tile','ki_archive_tile');
+
+// 画像ディレクトリ [img file="" alt=""]
+function ki_img ($atts) {
+	$tag = '<img src="' .get_stylesheet_directory_uri(). '/img/'.$atts["file"]. ' alt="' .$atts["alt"]. ' " />';
+	return $tag;
+}
+add_shortcode('img','ki_img');
+
 // Theme customize admin menu

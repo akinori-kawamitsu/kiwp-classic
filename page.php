@@ -1,6 +1,14 @@
 <?php get_header(); ?>
 	<?php if (has_post_thumbnail() ) :?>
-	<div class="page-kv"><?php the_post_thumbnail( 'full' );?></div>
+        <div class="page-kv">
+            <picture>
+                <?php if (get_post_meta($post->ID, 'page_kv', true)):?>
+                <source srcset="<?php echo get_post_meta($post->ID, 'page_kv', true);?>" media="(max-width:640px)"
+                    width="1280px" height="480px">
+                <?php endif;?>
+                <?php the_post_thumbnail('full');?>
+            </picture>
+		</div>
 	<?php endif;?>
 	<?php  ki_breadcrumb() ;?>
 <main id="main" class="main" role="main">

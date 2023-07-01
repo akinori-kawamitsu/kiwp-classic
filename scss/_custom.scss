@@ -226,7 +226,7 @@ article {
 /* 固定ページ */
 .page-kv {
     width: 100%;
-    height: 500px;
+    max-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;

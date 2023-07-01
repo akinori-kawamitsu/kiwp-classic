@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 	<main id="main" class="top-main" role="main">
+		<?php if( has_header_image() ):?>
 		<div class="top-kv"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" /></div>
+		<?php endif;?>
 		<article class="top-contents container">
 			<?php if (have_posts()): 
 				while (have_posts()): the_post();?>
@@ -51,7 +53,7 @@
 											'before_page_number' => '',
 											'after_page_number'  => ''
 										)); ?>
-										<div class="aligncenter">
+										<div class="aligncenter clear">
 											<a href="<?php ki_cat_link('uncategorized');?>" class="button-link" aria-role="button">もっと見る</a>
 										</div>
 				<?php endif; wp_reset_postdata();?>
