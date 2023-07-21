@@ -15,50 +15,33 @@
 		</article>
 
 
-		<div class="container">
-			<article class="flex">
-				<?php $child_query1 =  new WP_Query( array(
+		<?php $child_query1 =  new WP_Query( array(
 					'post_type'		=> 'post',
 					'category_name'	=> 'uncategorized',
 					'posts_per_page'=> 6,
 				));?>
-				<h2 class="col-12">未分類</h2>
-				<?php if ( $child_query1 -> have_posts()): 
-					while ( $child_query1 -> have_posts()): $child_query1 -> the_post();?>
-					<section class="col-4 top-posts card">
-						<?php if (has_post_thumbnail()):?>
-						<a href="<?php the_permalink() ;?>" class="small-img"><?php the_post_thumbnail( 'small' ); ?></a>
-						<?php else: ?>
-						<a href="<?php the_permalink() ;?>" class="no-img">No image</a>
-						<?php endif;?>
-						<h2 class="card-post-title"><a href="<?php the_permalink() ;?>"><?php echo wp_strip_all_tags( mb_substr( $post->post_title, 0, 20) , true );?></a></h2>
-						<div class="card-post-excerpt"><?php echo wp_strip_all_tags( mb_substr( get_the_excerpt(), 0, 50 ) , true ) ;?></div>
-						<div class="card-more" aria-role="button"><a href="<?php the_permalink() ;?>" class="card-more-btn">詳しく</a></div>
-					</section>
-					<?php endwhile; ?>
-							<?php echo paginate_links( array(
-											'base'               => '%_%',
-											'format'             => '?page=%#%',
-											'total'              => 1,
-											'current'            => 0,
-											'show_all'           => False,
-											'end_size'           => 1,
-											'mid_size'           => 2,
-											'prev_next'          => True,
-											'prev_text'          => esc_html__('&laquo; Previous', 'ki-orion'),
-											'next_text'          => esc_html__('Next &raquo;', 'ki-orion'),
-											'type'               => 'plain',
-											'add_args'           => False,
-											'add_fragment'       => '',
-											'before_page_number' => '',
-											'after_page_number'  => ''
-										)); ?>
-										<div class="aligncenter clear">
-											<a href="<?php ki_cat_link('uncategorized');?>" class="button-link" aria-role="button">もっと見る</a>
-										</div>
-				<?php endif; wp_reset_postdata();?>
-			</article>
-		</div>
+		<?php if ( $child_query1 -> have_posts()): ?>
+		<article class="container">
+			<h2>未分類</h2>
+			<div class="flex">
+				<?php while ( $child_query1 -> have_posts()): $child_query1 -> the_post();?>
+				<section class="col-4 top-posts card">
+					<?php if (has_post_thumbnail()):?>
+					<a href="<?php the_permalink() ;?>" class="small-img"><?php the_post_thumbnail( 'small' ); ?></a>
+					<?php else: ?>
+					<a href="<?php the_permalink() ;?>" class="no-img">No image</a>
+					<?php endif;?>
+					<h2 class="card-post-title"><a href="<?php the_permalink() ;?>"><?php echo wp_strip_all_tags( mb_substr( $post->post_title, 0, 20) , true );?></a></h2>
+					<div class="card-post-excerpt"><?php echo wp_strip_all_tags( mb_substr( get_the_excerpt(), 0, 50 ) , true ) ;?></div>
+					<div class="card-more" aria-role="button"><a href="<?php the_permalink() ;?>" class="card-more-btn">詳しく</a></div>
+				</section>
+				<?php endwhile; ?>
+			</div>
+			<div class="aligncenter clear">
+				<a href="<?php ki_cat_link('uncategorized');?>" class="button-link" aria-role="button">もっと見る</a>
+			</div>
+		</article>
+		<?php endif; wp_reset_postdata();?>
 
 		<div class="container">
 			<article class="post-list">
