@@ -41,18 +41,12 @@ $a_opacity: 0.85;
 $a_filter: alpha(opacity=($a_opacity * 100));
 
 // color settings
-$color_base: #FFF;
 $color_text: #333;
 $color_textlight: #666;
 $color_textreverse: #EEE;
 $color_textdisable: #CCC;
 $color_link: #00D;
-$color_main: #FFB76E;
-$color_accent: #9C590B;
 
-$color_form_border: #AAA;
-$color_form_shadow: #CCC;
-$color_form_focus: #5AF;
 
 // clearfix
 @mixin clearfix {

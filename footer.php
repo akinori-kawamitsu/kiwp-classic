@@ -79,6 +79,29 @@ wp_nav_menu( $fnav3 ); ?>
 		</div>
 	</div>
 
+	<script>
+	window.addEventListener('load', function() {
+		var links = document.querySelectorAll('a[href^="#"]');
+		
+		function smoothScroll(event) {
+			event.preventDefault();
+			
+			var speed = 400; // ミリ秒
+			var href = this.getAttribute("href");
+			var target = document.querySelector(href === "#" || href === "" ? 'html' : href);
+			var position = target.offsetTop - 60;
+			
+			window.scrollTo({
+				top: position,
+				behavior: 'smooth'
+			});
+		}
+		
+		for (var i = 0; i < links.length; i++) {
+			links[i].addEventListener('click', smoothScroll);
+		}
+	});
+  </script>
 </footer>
 <?php wp_footer(); ?>
 </body>

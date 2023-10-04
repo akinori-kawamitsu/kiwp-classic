@@ -77,19 +77,10 @@
     --font-marugo: "kosugimaru", sans-serif;
     --font-mono: Consolas, "Courier New", Courier, Monaco, Osaka-mono, "MS Gothic", monospace;
     
-    --color-base: #FFF;
     --color-text: #000;
 	--color-text-reverse: #FFF;
     --color-theme: hsl(240,100%,37%);
-    --color-main: hsl(105,100%,20%);
     --color-accent: hsl(15,100%,40%);
-    --color-strong: hsl(355,65%,40%);
-    --dark-base: #444;
-    --dark-text: #FFF;
-    --dark-theme: hsl(190,90%,60%);
-    --dark-main: hsl(105,60%,65%);
-    --dark-accent: hsl(15,100%,80%);
-    --dark-strong: hsl(350,100%,80%);
 
 	--box-shadow: 1px 1px 8px hsl(0, 0%, 50%);
 }
@@ -104,8 +95,7 @@ main::after {
 
 code {
 	overflow-x: scroll;
-	font-size: $font_small;
-	font-family: $font_code;
+	font-family: var(--font-mono);
 	white-space: pre;
 }
 
@@ -166,6 +156,52 @@ address {
 	font-style: normal;
 }
 
+h1, .h1 {
+	font-size: 2.4em;
+	font-weight: bold;
+	margin: 0.67em 0;
+}
+h2, .h2 {
+	font-size: 2.1em;
+	font-weight: bold;
+}
+h3, .h3 {
+	font-size: 1.8em;
+	font-weight: bold;
+}
+h4, .h4 {
+	font-size: 1.6em;
+	font-weight: bold;
+}
+h5, .h5 {
+	font-size: 1.3em;
+	font-weight: bold;
+}
+h6, .h6 {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="password"],
+textarea {
+	width: 100%;
+}
+
+a[target="_blank"]::after {
+	font-family: "fa";
+	content: "\f35d";
+	font-weight: 900;
+	display: inline-block;
+	width: 0.9em;
+	height: 0.9em;
+	margin-left: 0.3em;
+	color: inherit;
+}
+
 .aligncenter {
 	display: block;
 	margin: 0 auto 10px;
@@ -180,16 +216,6 @@ address {
 .alignright {
 	float: right;
 	margin: 0 0 10px $margin_sp_col;
-}
-a[target="_blank"]::after {
-	font-family: "fa";
-	content: "\f35d";
-	font-weight: 900;
-	display: inline-block;
-	width: 0.9em;
-	height: 0.9em;
-	margin-left: 0.3em;
-	color: inherit;
 }
 @media screen and (min-width:$tab) {
 	img.alignleft, img.alignright {

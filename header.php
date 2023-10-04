@@ -27,7 +27,7 @@
 <header class="header" id="header">
 	<div class="container header-container">
 		<div class="header-logo">
-			<a href="<?php echo home_url('/');?>">logo</a>
+			<a href="<?php echo home_url('/');?>">logo</a><a href="#main" class="skip-link">本文へスキップ</a>
 		</div>
 		<?php $gnav = array(
 	'menu'            => 'gnav-item',

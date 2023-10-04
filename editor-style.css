@@ -443,10 +443,6 @@ table {
   table-layout: fixed;
 }
 
-thead {
-  background-color: #FFB76E;
-}
-
 th, td {
   border: 1px solid #666;
   padding: 0 3px;
