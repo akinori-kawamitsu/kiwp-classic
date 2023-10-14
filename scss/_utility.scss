@@ -53,7 +53,7 @@ $mgn: 5;
 }
 	
 $mgnl: 30;
-@while $mgnl <=60 {
+@while $mgnl <=120 {
 	.mt-#{$mgnl} {
 		margin-top: #{$mgnl}px !important;
 	}

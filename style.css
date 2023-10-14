@@ -767,30 +767,28 @@ a[target=_blank]::after {
   color: inherit;
 }
 
+.alignnone {
+  margin: 10px 0;
+}
+
 .aligncenter {
   display: block;
-  margin: 0 auto 10px;
+  margin: 10px auto 10px;
   text-align: center;
 }
 
 .alignleft {
   float: left;
-  margin: 0 10px 10px 0;
+  margin: 10px 10px 10px 0;
   max-width: 50%;
 }
 
 .alignright {
   float: right;
-  margin: 0 0 10px 10px;
+  margin: 10px 0 10px 10px;
   max-width: 50%;
 }
 
-@media screen and (max-width: 640px) {
-  img.alignleft, img.alignright {
-    max-width: 100%;
-    margin: 0 0 10px 0;
-  }
-}
 .br {
   float: none;
   display: block;
@@ -826,14 +824,16 @@ a[target=_blank]::after {
   }
 }
 @media screen and (max-width: 640px) {
-  img.alignleft, img.alignright {
+  img.alignleft, img.alignright,
+  figure.alignleft, figure.alignright {
     float: none;
     display: block;
-    margin: 0;
+    margin: 0 auto;
     position: relative;
     right: 0;
   }
-  img.alignleft::after, img.alignright::after {
+  img.alignleft::after, img.alignright::after,
+  figure.alignleft::after, figure.alignright::after {
     content: "\a";
     white-space: pre;
   }
@@ -857,14 +857,10 @@ a[target=_blank]::after {
     content: "";
     white-space: pre;
   }
-  .sp-center, img.alignleft.sp-center, img.alignright.sp-center {
-    display: block;
-    margin: 0 auto;
-  }
 }
 .container {
   width: 100%;
-  max-width: 960px;
+  max-width: var(--container);
   margin: 0 auto;
 }
 
@@ -878,10 +874,10 @@ a[target=_blank]::after {
 }
 
 .clearfix::after {
-  clear: both;
-  content: " ";
+  content: "";
   display: block;
   line-height: 0;
+  clear: both;
 }
 
 .list-style-none {
@@ -966,7 +962,7 @@ a[target=_blank]::after {
 
 .wp-caption {
   max-width: 100%;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .wp-caption::after {
   clear: both;
@@ -1538,7 +1534,7 @@ article {
   display: inline-block;
 }
 
-@media screen and (min-width: 577px) {
+@media screen and (min-width: 960px) {
   .sp, .sp-inline {
     display: none;
   }
@@ -1657,4 +1653,52 @@ article {
 
 .mb-60 {
   margin-bottom: 60px !important;
+}
+
+.mt-70 {
+  margin-top: 70px !important;
+}
+
+.mb-70 {
+  margin-bottom: 70px !important;
+}
+
+.mt-80 {
+  margin-top: 80px !important;
+}
+
+.mb-80 {
+  margin-bottom: 80px !important;
+}
+
+.mt-90 {
+  margin-top: 90px !important;
+}
+
+.mb-90 {
+  margin-bottom: 90px !important;
+}
+
+.mt-100 {
+  margin-top: 100px !important;
+}
+
+.mb-100 {
+  margin-bottom: 100px !important;
+}
+
+.mt-110 {
+  margin-top: 110px !important;
+}
+
+.mb-110 {
+  margin-bottom: 110px !important;
+}
+
+.mt-120 {
+  margin-top: 120px !important;
+}
+
+.mb-120 {
+  margin-bottom: 120px !important;
 }/*# sourceMappingURL=style.css.map */

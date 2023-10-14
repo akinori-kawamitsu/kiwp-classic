@@ -1,5 +1,4 @@
 @charset "utf-8";
-@import "_parameter";
 
 // This file is used each "style.css" and "editor-style.css".
 .wp-caption p.wp-caption-text {
@@ -9,8 +8,8 @@
 }
 
 .wp-caption {
-   max-width: 100%;
-	margin-bottom: 5px;
+    max-width: 100%;
+	margin-bottom: 10px;
     &::after {
         @include clearfix;
     }
