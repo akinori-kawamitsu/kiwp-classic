@@ -1,0 +1,94 @@
+/* 以下のウェブフォントは不要なものは記述を削除またはコメントアウトすること。 */
+/* Noto Sans */
+@font-face {
+    font-family: "noto-sans";
+    src: url(./font/Noto_Sans_Subset/NotoSansJP-Light-Subset.woff2) format("woff2");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "noto-sans";
+    src: url(./font/Noto_Sans_Subset/NotoSansJP-Medium-Subset.woff2) format("woff2");
+    font-weight: bold;
+}
+// @font-face {
+//     font-family: "noto-sans";
+//     src: url(./font/Noto_Sans_Subset/NotoSansJP-Bold-Subset.woff2) format("woff2");
+//     font-weight: bold;
+// }
+/* Noto Serif */
+@font-face {
+    font-family: "noto-serif";
+    src: url(./font/Noto-Serif-Subset/NotoSerifJP-Regular-Subset.woff2) format("woff2");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "noto-serif";
+    src: url(./font/Noto-Serif-Subset/NotoSerifJP-Bold-Subset.woff2) format("woff2");
+    font-weight: bold;
+}
+// /* Kosugi Maru Goshic */
+// @font-face {
+//     font-family: "kosugimaru";
+//     src: url(./font/Kosugi_Maru_Subset/KosugiMaru-Regular-Subset.woff2) format("woff2");
+// }
+// /* Zen Old Mincho */
+// @font-face {
+//     font-family: "zen-mincho";
+//     src: url(./font/ZenOld_Mincho_Subset/ZenOldMincho-R-subset.woff2) format("woff2");
+//     font-weight: normal;
+// }
+// @font-face {
+//     font-family: "zen-mincho";
+//     src: url(./font/ZenOld_Mincho_Subset/ZenOldMincho-B-subset.woff2) format("woff2");
+//     font-weight: bold;
+// }
+/* Font awesome */
+@font-face {
+    font-family: "fa";
+    src: url(./font/fa-regular-400.woff2) format("woff2");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "fa";
+    src: url(./font/fa-solid-900.woff2) format("woff2");
+    font-weight: bold;
+}
+/* CSS変数設定 */
+:root {
+    --fs-12: 0.75rem;
+    --fs-13: 0.8125rem;
+    --fs-14: 0.875rem;
+    --fs-16: 1rem;
+    --fs-18: 1.125rem;
+    --fs-20: 1.25rem;
+    --fs-24: 1.5rem;
+    --fs-28: 1.75rem;
+    --fs-32: 2rem;
+    --fs-36: 2.25rem;
+    --fs-40: 2.5rem;
+    --fs-p:  1rem;
+    --fs-small: 0.0875rem;
+    font-size: var(--fs-p);
+
+    --font-serif: "noto-serif", "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+    --font-sanserif: "noto-sans", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
+    --font-marugo: "kosugimaru", sans-serif;
+    --font-mono: Consolas, "Courier New", Courier, Monaco, Osaka-mono, "MS Gothic", monospace;
+    
+    --color-text: #000;
+	--color-text-reverse: #FFF;
+	--color-link: hsl(240,100%,37%);
+    --color-theme: hsl(240,100%,37%);
+    --color-accent: hsl(15,100%,40%);
+
+	--color-gray: #666;
+	--color-lightgray: #CCC;
+
+	--box-shadow: 1px 1px 8px hsl(0, 0%, 50%);
+
+	--container: 960px;
+	--burg-btn-size: 44px;
+	--burg-size: 40px;
+	--burg-border-radius: 5px;
+	--burg-line-thick: 4px;
+}

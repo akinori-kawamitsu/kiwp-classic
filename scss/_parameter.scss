@@ -27,27 +27,6 @@ $pc:$tabmax+1px;
 // container max width
 $container:960px;
 
-// font settings
-$font_serif: "游明朝", "Yu Mincho", YuMincho, "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
-$font_sanserif:  "游ゴシック", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-$font_code: Consolas, 'Courier New', Courier, Monaco, monospace, "Osaka－等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic";
-$font_size: 16px;
-$font_small: 14px;
-
-$line_height: 1.6;
-
-// anchor opacity
-$a_opacity: 0.85;
-$a_filter: alpha(opacity=($a_opacity * 100));
-
-// color settings
-$color_text: #333;
-$color_textlight: #666;
-$color_textreverse: #EEE;
-$color_textdisable: #CCC;
-$color_link: #00D;
-
-
 // clearfix
 @mixin clearfix {
 	clear: both;
@@ -55,11 +34,3 @@ $color_link: #00D;
 	display: block;
 	line-height: 0;
 }
-
-// component
-// header height
-$header_height: 40px;
-$header_itemsheight: 38px;
-
-// breadcrumb separetor
-$breadcrumb: ">";

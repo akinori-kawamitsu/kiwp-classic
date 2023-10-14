@@ -1,89 +1,8 @@
 @charset "utf-8";
-@import "_parameter";
-/* 以下のウェブフォントは不要なものは記述を削除またはコメントアウトすること。 */
-/* Noto Sans */
-@font-face {
-    font-family: "noto-sans";
-    src: url(./font/Noto_Sans_Subset/NotoSansJP-Light-Subset.woff2) format("woff2");
-    font-weight: normal;
-}
-@font-face {
-    font-family: "noto-sans";
-    src: url(./font/Noto_Sans_Subset/NotoSansJP-Medium-Subset.woff2) format("woff2");
-    font-weight: bold;
-}
-// @font-face {
-//     font-family: "noto-sans";
-//     src: url(./font/Noto_Sans_Subset/NotoSansJP-Bold-Subset.woff2) format("woff2");
-//     font-weight: bold;
-// }
-/* Noto Serif */
-@font-face {
-    font-family: "noto-serif";
-    src: url(./font/Noto-Serif-Subset/NotoSerifJP-Regular-Subset.woff2) format("woff2");
-    font-weight: normal;
-}
-@font-face {
-    font-family: "noto-serif";
-    src: url(./font/Noto-Serif-Subset/NotoSerifJP-Bold-Subset.woff2) format("woff2");
-    font-weight: bold;
-}
-/* Kosugi Maru Goshic */
-@font-face {
-    font-family: "kosugimaru";
-    src: url(./font/Kosugi_Maru_Subset/KosugiMaru-Regular-Subset.woff2) format("woff2");
-}
-/* Zen Old Mincho */
-@font-face {
-    font-family: "zen-mincho";
-    src: url(./font/ZenOld_Mincho_Subset/ZenOldMincho-R-subset.woff2) format("woff2");
-    font-weight: normal;
-}
-@font-face {
-    font-family: "zen-mincho";
-    src: url(./font/ZenOld_Mincho_Subset/ZenOldMincho-B-subset.woff2) format("woff2");
-    font-weight: bold;
-}
-/* Font awesome */
-@font-face {
-    font-family: "fa";
-    src: url(./font/fa-regular-400.woff2) format("woff2");
-    font-weight: normal;
-}
-@font-face {
-    font-family: "fa";
-    src: url(./font/fa-solid-900.woff2) format("woff2");
-    font-weight: bold;
-}
-/* CSS変数設定 */
-:root {
-    --fs-12: 0.75rem;
-    --fs-13: 0.8125rem;
-    --fs-14: 0.875rem;
-    --fs-16: 1rem;
-    --fs-18: 1.125rem;
-    --fs-20: 1.25rem;
-    --fs-24: 1.5rem;
-    --fs-28: 1.75rem;
-    --fs-32: 2rem;
-    --fs-36: 2.25rem;
-    --fs-40: 2.5rem;
-    --fs-p:  1rem;
-    --fs-small: 0.0875rem;
-    font-size: var(--fs-p);
+$container: 960px;
+$sp: 640px;
+$tab: 960px;
 
-    --font-serif: "noto-serif", serif;
-    --font-sanserif: "noto-sans", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
-    --font-marugo: "kosugimaru", sans-serif;
-    --font-mono: Consolas, "Courier New", Courier, Monaco, Osaka-mono, "MS Gothic", monospace;
-    
-    --color-text: #000;
-	--color-text-reverse: #FFF;
-    --color-theme: hsl(240,100%,37%);
-    --color-accent: hsl(15,100%,40%);
-
-	--box-shadow: 1px 1px 8px hsl(0, 0%, 50%);
-}
 /* style base */
 section {
 	clear: both;
@@ -102,8 +21,8 @@ code {
 blockquote {
 	margin: 10px;
 	padding: 10px;
-	border-left: $color_textdisable 4px solid;
-	color: $color_textlight;
+	border-left: var(--color-lightgray) 4px solid;
+	color: var(--color-gray);
 }
 
 table {
@@ -120,7 +39,7 @@ thead {
 }
 
 th, td {
-	border: 1px solid $color_textlight;
+	border: 1px solid var(--color-gray);
 	padding: 0 3px;
 	empty-cells: show;
 }
@@ -136,12 +55,11 @@ p {
 
 :where(a) {
 	&:link, &:visited{
-		color: $color_link;
+		color: var(--color-link);
 		text-decoration: none;
 	}
 	&:hover, &:active {
-		opacity: $a_opacity;
-		-ms-filter: "#{$a_filter}";
+		opacity: 0.8;
 	}
 }
 
@@ -149,7 +67,6 @@ img {
 	width: auto;
 	height: auto;
 	max-width: 100%;
-	padding-top: (($line_height - 1)/2) + em;
 }
 
 address {
@@ -210,16 +127,19 @@ a[target="_blank"]::after {
 
 .alignleft {
 	float: left;
-	margin: 0 $margin_sp_col 10px 0;
+	margin: 0 10px 10px 0;
+	max-width: 50%;
 }
 
 .alignright {
 	float: right;
-	margin: 0 0 10px $margin_sp_col;
+	margin: 0 0 10px 10px;
+	max-width: 50%;
 }
-@media screen and (min-width:$tab) {
+@media screen and (max-width:$sp) {
 	img.alignleft, img.alignright {
-		max-width: 50%;
+		max-width: 100%;
+		margin: 0 0 10px 0;
 	}
 }
 
@@ -241,7 +161,7 @@ a[target="_blank"]::after {
 	display: block;
 }
 
-@media screen and (max-width:$tabmax) {
+@media screen and (max-width:$tab) {
 //　tabサイズで画像の回り込みを解消するクラス　br-tab
 	.alignleft.br-tab, .alignright.br-tab {
 		float: none;
@@ -279,7 +199,7 @@ a[target="_blank"]::after {
 		float: left;
 		display: inline;
 		max-width: 50%;
-		margin: 0  $margin_sp_col 0 0;
+		margin: 0  10px 0 0;
 		&::after {
 			content: "";
 			white-space: pre;
@@ -289,7 +209,7 @@ a[target="_blank"]::after {
 		float: right;
 		display: inline;
 		max-width: 50%;
-		margin: 0 0 0  $margin_sp_col;
+		margin: 0 0 0 10px;
 		&::after {
 			content: "";
 			white-space: pre;
@@ -348,7 +268,7 @@ a[target="_blank"]::after {
 	box-sizing: content-box;
 	line-height: 1.2;
 	display: block;
-	margin-bottom: $margin_sp_row;
+	margin-bottom: 10px;
 }
 
 .caption-img {
@@ -381,4 +301,17 @@ a[target="_blank"]::after {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
+}
+
+.flex {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.flex-r {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	flex-direction: row-reverse;
 }

@@ -61,7 +61,7 @@
 	font-size: 87.5%;
 }
 .bypostauthor {
-	color: $color_text;
+	color: var(--color-text);
 }
 .screen-reader-text {
     clip: rect(1px, 1px, 1px, 1px);
