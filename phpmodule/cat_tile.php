@@ -48,23 +48,23 @@ $child_query1 =  new WP_Query( array(
 
 ?>
 <?php if ( $child_query1 -> have_posts()): ?>
-<article class="flex">
+<article class="">
     <h2><?php echo $section_title ;?></h2>
-    <div class="flex">
+    <div class="pc-4 gap-20 cat-tile">
     <?php while ( $child_query1 -> have_posts()): $child_query1 -> the_post();?>
-        <section class="col-4 top-posts card">
+        <section class="card">
             <?php if (has_post_thumbnail()):?>
             <a href="<?php the_permalink() ;?>" class="small-img"><?php the_post_thumbnail( 'small' ); ?></a>
             <?php else: ?>
             <a href="<?php the_permalink() ;?>" class="no-img">No image</a>
             <?php endif;?>
-            <h2 class="card-post-title"><a href="<?php the_permalink() ;?>"><?php echo wp_strip_all_tags( mb_substr( $post->post_title, 0, 20) , true );?></a></h2>
+            <h2 class="card-post-title"><a href="<?php the_permalink() ;?>"><?php the_title();?></a></h2>
             <div class="card-post-excerpt"><?php echo wp_strip_all_tags( mb_substr( get_the_excerpt(), 0, 50 ) , true ) ;?></div>
             <div class="card-more" aria-role="button"><a href="<?php the_permalink() ;?>" class="card-more-btn">詳しく</a></div>
         </section>
         <?php endwhile; ?>
     </div>
-    <div class="aligncenter">
+    <div class="aligncenter mt-30">
         <a href="<?php ki_cat_link($target_slug);?>" class="button-link" aria-role="button">一覧へ</a>
     </div>
 </article>

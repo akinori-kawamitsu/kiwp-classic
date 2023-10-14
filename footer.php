@@ -1,12 +1,12 @@
 <footer id="footer" class="footer">
 	<div class="content-wrapper footer-container">
-		<div class="flex">
-			<div class="col-3">
+		<div class="pc-4 sp-1 gap-20">
+			<div class="">
 				<p class="footer-logo">logo</p>
 				<address>〒***-****<br>都道府県市町村番地</address>
 				<p class="tel"><a href="tel:">***-****-****</a></p>
 			</div>
-			<div class="col-3">
+			<div class="">
 				<h3>サービス</h3>
 			<?php
 $fnav = array(
@@ -29,7 +29,7 @@ $fnav = array(
 );
 wp_nav_menu( $fnav ); ?>
 			</div>
-			<div class="col-3">
+			<div class="">
 				<h3>サービス2</h3>
 			<?php
 $fnav2 = array(
@@ -52,7 +52,7 @@ $fnav2 = array(
 );
 wp_nav_menu( $fnav2 ); ?>
 			</div>
-			<div class="col-3">
+			<div class="">
 				<h3>会社情報</h3>
 			<?php
 $fnav3 = array(

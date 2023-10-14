@@ -586,7 +586,7 @@ a[target=_blank]::after {
 
 @media screen and (max-width: 960px) {
   .container {
-    padding: 0 5px;
+    padding: 0 10px;
   }
 }
 .clear {

@@ -6,7 +6,7 @@ body {
     position: relative;
     font-family: var(--font-sanserif);
     font-weight: normal;
-    word-wrap: break-word;
+    word-wrap: anywhere;
 }
 
 pre, .pre {
@@ -183,7 +183,7 @@ kbd {
 @media screen and (min-width: $container) {
 	.header-container {
 		display: flex;
-		justify-content: flex-start;
+		justify-content: space-between;
 		align-items: center;
 		overflow-y: visible;
 	}

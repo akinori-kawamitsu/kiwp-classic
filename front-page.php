@@ -23,9 +23,9 @@
 		<?php if ( $child_query1 -> have_posts()): ?>
 		<article class="container">
 			<h2>未分類</h2>
-			<div class="flex">
+			<div class="pc-4 gap-30">
 				<?php while ( $child_query1 -> have_posts()): $child_query1 -> the_post();?>
-				<section class="col-4 top-posts card">
+				<section class="top-posts card">
 					<?php if (has_post_thumbnail()):?>
 					<a href="<?php the_permalink() ;?>" class="small-img"><?php the_post_thumbnail( 'small' ); ?></a>
 					<?php else: ?>
@@ -37,7 +37,7 @@
 				</section>
 				<?php endwhile; ?>
 			</div>
-			<div class="aligncenter clear">
+			<div class="aligncenter mt-30 clear">
 				<a href="<?php ki_cat_link('uncategorized');?>" class="button-link" aria-role="button">もっと見る</a>
 			</div>
 		</article>
