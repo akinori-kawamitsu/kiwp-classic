@@ -116,7 +116,7 @@ table {
 }
 
 thead {
-	background-color: $color_main;
+	background-color: var(--color-theme);
 }
 
 th, td {

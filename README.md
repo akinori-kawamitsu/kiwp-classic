@@ -1,4 +1,4 @@
-# kiwp-classic 1.3.1
+# kiwp-classic 1.3.3
 WordPressクラシックテーマ標準テンプレート
 
 ki-orion 1.0 よりフォーク
