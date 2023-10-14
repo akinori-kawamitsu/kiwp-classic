@@ -81,7 +81,7 @@ add_theme_support('custom-header', array(
 ));
 
 // Setting content width
-if ( ! isset( $content_width ) ) $content_width = 600;
+if ( ! isset( $content_width ) ) $content_width = 960;
 
 // 抜粋の長さの変更
 function ki_excerpt_length($length) {

@@ -89,3 +89,7 @@ alignleft, arignrightで画像に回り込みを設定した場合、画像が�
 
 ### var 1.3.2
 + 変数を整理
+
+### var 1.3.3
++ var1系最終バージョンとする。
++ function.php メディアサイズ（大）の制限を960pxに
