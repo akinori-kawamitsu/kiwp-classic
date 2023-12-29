@@ -1,0 +1,168 @@
+@charset "utf-8";
+
+@media screen and (max-width: 640px) {
+
+    /* spサイズで画像の回り込みを解消、中央配置にする。（デフォルト設定） */
+    img.alignleft, img.alignright,
+    figure.alignleft, figure.alignright {
+        float: none;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        right: 0;
+
+        &::after {
+            content: "\A";
+            white-space: pre;
+        }
+    }
+
+    /* spサイズでも画像の最大幅を50%にして、回り込みを有効にするクラス　br-no */
+    img.alignleft.br-no {
+        float: left;
+        display: inline;
+        max-width: 50%;
+        margin: 0 10px 0 0;
+
+        &::after {
+            content: "";
+            white-space: pre;
+        }
+    }
+
+    img.alignright.br-no {
+        float: right;
+        display: inline;
+        max-width: 50%;
+        margin: 0 0 0 10px;
+
+        &::after {
+            content: "";
+            white-space: pre;
+        }
+    }
+
+    /* グリッド */
+    .pc-6,
+    .pc-5,
+    .pc-4,
+    .pc-3,
+    .pc-2,
+    .tab-3,
+    .tab-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tab-1,
+    .sp-1 {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .gap-0 {
+        gap: 5px 10px;
+    }
+
+    .gap-pc-0 {
+        gap: 5px 10px;
+    }
+
+    .gap-10 {
+        gap: 5px 10px;
+    }
+
+    .gap-pc-10 {
+        gap: 5px 10px;
+    }
+
+    .gap-20 {
+        gap: 5px 10px;
+    }
+
+    .gap-pc-20 {
+        gap: 5px 10px;
+    }
+
+    .gap-30 {
+        gap: 5px 10px;
+    }
+
+    .gap-pc-30 {
+        gap: 5px 10px;
+    }
+
+    .gap-40 {
+        gap: 5px 10px;
+    }
+
+    .gap-pc-40 {
+        gap: 5px 10px;
+    }
+
+    .gap-50 {
+        gap: 5px 10px;
+    }
+
+    .gap-pc-50 {
+        gap: 5px 10px;
+    }
+
+    .gap-60 {
+        gap: 5px 10px;
+    }
+
+    .gap-pc-60 {
+        gap: 5px 10px;
+    }
+
+    .gap-tab-0 {
+        gap: 5px 10px;
+    }
+
+    .gap-tab-10 {
+        gap: 5px 10px;
+    }
+
+    .gap-tab-20 {
+        gap: 5px 10px;
+    }
+
+    .gap-tab-30 {
+        gap: 5px 10px;
+    }
+
+    .gap-sp-0 {
+        gap: 0px;
+    }
+
+    .gap-sp-5 {
+        gap: 5px;
+    }
+
+    .gap-sp-10 {
+        gap: 10px;
+    }
+
+    .gap-sp-15 {
+        gap: 15px;
+    }
+
+    .gap-sp-20 {
+        gap: 20px;
+    }
+
+    /* ユーティリティクラス */
+    .tab, .pc, .tab-inline, .pc-inline {
+        display: none;
+    }
+
+    .sp {
+        display: block;
+    }
+
+    .sp-inline {
+        display: inline-block;
+    }
+
+}

@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 	<main id="main" class="main archive-main" role="main">
 		<article class="container">
-			<h1 class="post-title col-12"><?php single_cat_title( '', true ); ?></h1>
+			<h1 class="post-title"><?php single_cat_title( '', true ); ?></h1>
 			<?php if (have_posts()): ?>
-				<div class="pc-4 gap-30 mb-30">
+				<div class="pc-4 gap-20 mb-30">
 				<?php while (have_posts()): the_post();?>
-				<section class="col-4 card">
+				<section class="card">
 					<?php if (has_post_thumbnail()):?>
 					<a href="<?php the_permalink() ;?>" class="small-img"><?php the_post_thumbnail( 'small' ); ?></a>
 					<?php else: ?>

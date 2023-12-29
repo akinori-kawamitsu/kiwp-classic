@@ -5,17 +5,18 @@
 	<?php if (has_post_thumbnail() ) :?>
 	<div class="page-kv"><?php the_post_thumbnail( 'full' );?></div>
 	<?php endif;?>
-	<?php  ki_breadcrumb() ;?>
-		<div class="content-wrapper">
+	
+	<div class="content-wrapper">
 		<main id="main" class="main" role="main">
 
 			<div class="container">
-			<h1 class="post-title"><?php echo get_the_title();?></h1>
-				<div <?php post_class();?>><?php the_content() ;?></div>
-				<?php comments_template(); ?>
-				</div>
-			</main>
-		</div>
+				<?php  ki_breadcrumb() ;?>
+				<h1 class="post-title"><?php echo get_the_title();?></h1>
+					<div <?php post_class();?>><?php the_content() ;?></div>
+					<?php comments_template(); ?>
+			</div>
+		</main>
+	</div>
 		<?php
 		$prev_post = get_previous_post(true); // 同一カテゴリに属する前の投稿を取得
 		$next_post = get_next_post(true); // 同一カテゴリに属する次の投稿を取得
@@ -49,23 +50,23 @@
 	?>
 	<?php if ( $child_query1 -> have_posts()): ?>
 		<aside class="container">
-			<div class="flex">
-				<h2>関連記事</h2>
-				<div class="flex">
+			
+			<h2>関連記事</h2>
+			<div class="pc-4 gap-20">
 				<?php while ( $child_query1 -> have_posts()): $child_query1 -> the_post();?>
-					<section class="col-3 top-posts card">
-						<?php if (has_post_thumbnail()):?>
-						<a href="<?php the_permalink() ;?>" class="small-img"><?php the_post_thumbnail( 'small' ); ?></a>
-						<?php else: ?>
-						<a href="<?php the_permalink() ;?>" class="no-img">No image</a>
-						<?php endif;?>
-						<h2 class="card-post-title"><a href="<?php the_permalink() ;?>"><?php echo wp_strip_all_tags( mb_substr( $post->post_title, 0, 20) , true );?></a></h2>
-						<div class="card-post-excerpt"><?php echo wp_strip_all_tags( mb_substr( get_the_excerpt(), 0, 50 ) , true ) ;?></div>
-						<div class="card-more" aria-role="button"><a href="<?php the_permalink() ;?>" class="card-more-btn">詳しく</a></div>
-					</section>
-					<?php endwhile; ?>
-				</div>
+				<section class="card">
+					<?php if (has_post_thumbnail()):?>
+					<a href="<?php the_permalink() ;?>" class="small-img"><?php the_post_thumbnail( 'small' ); ?></a>
+					<?php else: ?>
+					<a href="<?php the_permalink() ;?>" class="no-img">No image</a>
+					<?php endif;?>
+					<h2 class="card-post-title"><a href="<?php the_permalink() ;?>"><?php echo wp_strip_all_tags( mb_substr( $post->post_title, 0, 20) , true );?></a></h2>
+					<div class="card-post-excerpt"><?php echo wp_strip_all_tags( mb_substr( get_the_excerpt(), 0, 50 ) , true ) ;?></div>
+					<div class="card-more" aria-role="button"><a href="<?php the_permalink() ;?>" class="card-more-btn">詳しく</a></div>
+				</section>
+				<?php endwhile; ?>
 			</div>
+		
 		</aside>
 	<?php endif; wp_reset_postdata();?>
 	

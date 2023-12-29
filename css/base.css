@@ -1,0 +1,718 @@
+@charset "utf-8";
+
+/* 以下のウェブフォントは不要なものは記述を削除またはコメントアウトすること。 */
+/* Noto Sans */
+@font-face {
+  font-family: "noto-sans";
+  src: url(./font/Noto_Sans_Subset/NotoSansJP-Light-Subset.woff2) format("woff2");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "noto-sans";
+  src: url(./font/Noto_Sans_Subset/NotoSansJP-Medium-Subset.woff2) format("woff2");
+  font-weight: bold;
+}
+
+/* @font-face {
+    font-family: "noto-sans";
+     src: url(./font/Noto_Sans_Subset/NotoSansJP-Bold-Subset.woff2) format("woff2");
+     font-weight: bold;
+ } */
+/* Noto Serif */
+/* @font-face {
+    font-family: "noto-serif";
+    src: url(./font/Noto-Serif-Subset/NotoSerifJP-Regular-Subset.woff2) format("woff2");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "noto-serif";
+    src: url(./font/Noto-Serif-Subset/NotoSerifJP-Bold-Subset.woff2) format("woff2");
+    font-weight: bold;
+} */
+/* Kosugi Maru Goshic */
+/* @font-face {
+    font-family: "kosugimaru";
+    src: url(./font/Kosugi_Maru_Subset/KosugiMaru-Regular-Subset.woff2) format("woff2");
+} */
+/* Zen Old Mincho */
+/* @font-face {
+    font-family: "zen-mincho";
+    src: url(./font/ZenOld_Mincho_Subset/ZenOldMincho-R-subset.woff2) format("woff2");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "zen-mincho";
+    src: url(./font/ZenOld_Mincho_Subset/ZenOldMincho-B-subset.woff2) format("woff2");
+    font-weight: bold;
+} */
+/* Font awesome */
+@font-face {
+  font-family: "fa";
+  src: url(./font/fa-regular-400.woff2) format("woff2");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "fa";
+  src: url(./font/fa-solid-900.woff2) format("woff2");
+  font-weight: bold;
+}
+
+/* CSS変数設定 */
+:root {
+  --fs-12: 0.75rem;
+  --fs-13: 0.8125rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-24: 1.5rem;
+  --fs-28: 1.75rem;
+  --fs-32: 2rem;
+  --fs-36: 2.25rem;
+  --fs-40: 2.5rem;
+  --fs-p: 1rem;
+  --fs-small: 0.0875rem;
+  font-size: var(--fs-p);
+
+  /* --font-serif: "noto-serif", "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif; */
+  --font-sanserif: "noto-sans", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
+  /* --font-marugo: "kosugimaru", sans-serif; */
+  --font-mono: Consolas, "Courier New", Courier, Monaco, Osaka-mono, "MS Gothic", monospace;
+
+  /* 文字色 */
+  --color-text: #000;
+  --color-text-reverse: #FFF;
+  --color-link-text: hsl(240, 100%, 37%);
+
+  /* 背景色とそれに対応した文字色 */
+  --color-theme: hsl(240, 100%, 37%);
+  --color-theme-text: #FFF;
+  --color-accent: hsl(15, 100%, 40%);
+  --color-accent-text: #FFF;
+
+  --color-gray: #555;
+  --color-gray-text: #FFF;
+  --color-lightgray: #CCC;
+  --color-lightgray-text: #000;
+
+  --box-shadow: 1px 1px 8px hsl(0, 0%, 50%);
+
+  --container: 960px;
+  --burg-btn-size: 44px;
+  --burg-size: 40px;
+  --burg-border-radius: 5px;
+  --burg-line-thick: 4px;
+}
+
+
+
+/* 要素スタイル */
+body {
+  position: relative;
+  font-family: var(--font-sanserif);
+  font-weight: normal;
+  word-wrap: anywhere;
+}
+
+kbd {
+  display: inline-block;
+  padding: 0px 5px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px #9999;
+}
+
+section {
+  clear: both;
+}
+
+main::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+pre,
+.pre {
+  font-family: var(--font-mono);
+  line-height: 1.2;
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+code,
+.code {
+  background-color: #DDD;
+  font-family: var(--font-mono);
+  padding: 0 0.5em;
+  overflow-x: scroll;
+  white-space: pre;
+}
+
+blockquote {
+  margin: 10px;
+  padding: 10px;
+  border-left: var(--color-lightgray) 4px solid;
+  color: var(--color-gray);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-fix {
+  table-layout: fixed;
+}
+
+thead {
+  background-color: var(--color-theme);
+  color: var(--color-theme-text);
+}
+
+th {
+  border: 1px solid var(--color-gray);
+  padding: 5px 3px;
+  empty-cells: show;
+}
+
+td {
+  border: 1px solid var(--color-gray);
+  padding: 5px 3px;
+  empty-cells: show;
+}
+
+ul, ol {
+  padding-left: 2em;
+}
+
+p {
+  margin: 0.5em 0;
+  padding: 0;
+}
+
+:where(a):link {
+  color: var(--color-link-text);
+  text-decoration: none;
+}
+
+:where(a):visited {
+  color: var(--color-link-text);
+  text-decoration: none;
+}
+
+:where(a):hover {
+  opacity: 0.8;
+}
+
+:where(a):active {
+  opacity: 0.8;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+address {
+  font-style: normal;
+}
+
+h1, .h1 {
+  font-size: 2.4em;
+  font-weight: bold;
+  margin: 0.67em 0;
+}
+
+h2, .h2 {
+  font-size: 2.1em;
+  font-weight: bold;
+}
+
+h3, .h3 {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+h4, .h4 {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+h5, .h5 {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+h6, .h6 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="password"],
+textarea {
+  width: 100%;
+}
+
+a[target="_blank"]::after {
+  font-family: "fa";
+  content: "\f35d";
+  font-weight: 900;
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  margin-left: 0.3em;
+  color: inherit;
+}
+
+.alignnone {
+  margin: 10px 0;
+}
+
+.aligncenter {
+  display: block;
+  margin: 10px auto 10px;
+  text-align: center;
+}
+
+.alignleft {
+  float: left;
+  margin: 10px 10px 10px 0;
+  max-width: 50%;
+}
+
+.alignright {
+  float: right;
+  margin: 10px 0 10px 10px;
+  max-width: 50%;
+}
+
+/* 　要素のあとに改行を入れるクラス　br */
+.br {
+  float: none;
+  display: block;
+  margin: 0;
+
+  &::after {
+    content: "\A";
+    white-space: pre;
+  }
+}
+
+:where(nav), :where(nav) ul, :where(nav) li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+}
+
+/* コンテナ */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+/* 回り込み解消 */
+.clear {
+  clear: both;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  line-height: 0;
+  clear: both;
+}
+
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justyfy {
+  text-align: justify;
+}
+
+.caption {
+  max-width: 100%;
+  box-sizing: content-box;
+  line-height: 1.2;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.caption-img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.caption-img>img {
+  max-width: 100%;
+}
+
+.caption-text {
+  display: inline;
+  font-size: 14px;
+}
+
+.table {
+  display: table;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.flex-r {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+
+/* WordPress が独自に出力するクラス クラシックテーマ用 */
+.wp-caption p.wp-caption-text {
+  font-size: 14px;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.wp-caption {
+  max-width: 100%;
+  margin-bottom: 10px;
+
+  &::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+
+  .alignleft, .alignright, .aligncenter {
+    max-width: 100%;
+    display: inline;
+  }
+}
+
+.wp-caption img {
+  margin: 5px auto 0;
+  padding: 0;
+  border: 0 none;
+}
+
+.categories {}
+
+.cat-item {}
+
+.current-cat {}
+
+.current-cat-parent {}
+
+.children {}
+
+.pagenav {}
+
+.page_item {}
+
+.current_page_item {}
+
+.current_page_parent {}
+
+.current_page_ancestor {}
+
+.widget {}
+
+.widget_text {}
+
+.blogroll {}
+
+.linkcat {}
+
+/* must class */
+.sticky {
+  display: block;
+}
+
+.gallery-caption {
+  font-size: 87.5%;
+}
+
+.bypostauthor {
+  color: var(--color-text);
+}
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+
+/* 埋め込みコンテンツ */
+.youtube {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.youtube iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.twitter {
+  width: auto;
+  max-width: 400px;
+}
+
+.twitter iframe {
+  width: 100% !important;
+}
+
+.facebook {
+  width: auto;
+  max-width: 400px;
+}
+
+.fb-page,
+.fb-page span,
+.facebook iframe {
+  width: 100% !important;
+  height: 500px !important;
+}
+
+.gmap {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  max-width: 90%;
+  margin: auto;
+
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* ユーティリティクラス */
+.sp, .sp-inline,
+.tab, .tab-inline, {
+  display: none;
+}
+
+.pc {
+  display: block;
+}
+
+.pc-inline {
+  display: inline;
+}
+
+/* padding-top 5~40px 5px刻み */
+.pt-5 {
+  padding-top: 5px !important;
+}
+
+.pt-10 {
+  padding-top: 10px !important;
+}
+
+.pt-15 {
+  padding-top: 15px !important;
+}
+
+.pt-20 {
+  padding-top: 20px !important;
+}
+
+.pt-25 {
+  padding-top: 25px !important;
+}
+
+.pt-30 {
+  padding-top: 30px !important;
+}
+
+.pt-35 {
+  padding-top: 35px !important;
+}
+
+.pt-40 {
+  padding-top: 40px !important;
+}
+
+/* padding-bottom 5~40px 5px刻み */
+.pb-5 {
+  padding-bottom: 5px !important;
+}
+
+.pb-10 {
+  padding-bottom: 10px !important;
+}
+
+.pb-15 {
+  padding-bottom: 15px !important;
+}
+
+.pb-20 {
+  padding-bottom: 20px !important;
+}
+
+.pb-25 {
+  padding-bottom: 25px !important;
+}
+
+.pb-30 {
+  padding-bottom: 30px !important;
+}
+
+.pb-35 {
+  padding-bottom: 35px !important;
+}
+
+.pb-40 {
+  padding-bottom: 40px !important;
+}
+
+/* margin-top 5~20は5px刻み、30px~120pxは10px刻み */
+.mt-5 {
+  margin-top: 5px !important;
+}
+
+.mt-10 {
+  margin-top: 10px !important;
+}
+
+.mt-15 {
+  margin-top: 15px !important;
+}
+
+.mt-20 {
+  margin-top: 20px !important;
+}
+
+.mt-30 {
+  margin-top: 30px !important;
+}
+
+.mt-40 {
+  margin-top: 40px !important;
+}
+
+.mt-50 {
+  margin-top: 50px !important;
+}
+
+.mt-60 {
+  margin-top: 60px !important;
+}
+
+.mt-70 {
+  margin-top: 70px !important;
+}
+
+.mt-80 {
+  margin-top: 80px !important;
+}
+
+.mt-90 {
+  margin-top: 90px !important;
+}
+
+.mt-100 {
+  margin-top: 100px !important;
+}
+
+.mt-110 {
+  margin-top: 110px !important;
+}
+
+.mt-120 {
+  margin-top: 120px !important;
+}
+
+/* margin-bottom 5~20は5px刻み、30px~120pxは10px刻み */
+.mb-5 {
+  margin-bottom: 5px !important;
+}
+
+.mb-10 {
+  margin-bottom: 10px !important;
+}
+
+.mb-15 {
+  margin-bottom: 15px !important;
+}
+
+.mb-20 {
+  margin-bottom: 20px !important;
+}
+
+.mb-30 {
+  margin-bottom: 30px !important;
+}
+
+.mb-40 {
+  margin-bottom: 40px !important;
+}
+
+.mb-50 {
+  margin-bottom: 50px !important;
+}
+
+.mb-60 {
+  margin-bottom: 60px !important;
+}
+
+.mb-70 {
+  margin-bottom: 70px !important;
+}
+
+.mb-80 {
+  margin-bottom: 80px !important;
+}
+
+.mb-90 {
+  margin-bottom: 90px !important;
+}
+
+.mb-100 {
+  margin-bottom: 100px !important;
+}
+
+.mb-110 {
+  margin-bottom: 110px !important;
+}
+
+.mb-120 {
+  margin-bottom: 120px !important;
+}

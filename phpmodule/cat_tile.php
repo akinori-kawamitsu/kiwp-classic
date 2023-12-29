@@ -17,8 +17,6 @@ if ( isset($atts["num"]) ) {
     $item_num = 0;
 }
 
-$cat_id = get_category_by_slug( $target_slug )->cat_ID;
-
 // ,区切りのカテゴリースラッグを,区切りのカテゴリー名に変換。見出しに使う。
 $slug_array = explode(",", $target_slug);
 $category_names = array();
@@ -48,7 +46,7 @@ $child_query1 =  new WP_Query( array(
 
 ?>
 <?php if ( $child_query1 -> have_posts()): ?>
-<article class="">
+<section class="">
     <h2><?php echo $section_title ;?></h2>
     <div class="pc-4 gap-20 cat-tile">
     <?php while ( $child_query1 -> have_posts()): $child_query1 -> the_post();?>
@@ -64,8 +62,10 @@ $child_query1 =  new WP_Query( array(
         </section>
         <?php endwhile; ?>
     </div>
+    <?php if(!array_key_exists(1, $slug_array)):?>
     <div class="aligncenter mt-30">
         <a href="<?php ki_cat_link($target_slug);?>" class="button-link" aria-role="button">一覧へ</a>
     </div>
-</article>
+    <?php endif;?>
+</section>
 <?php endif; wp_reset_postdata();?>

@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* デスクトップファーストでコーディング */
+/* 親要素に設定 */
+.sp-1,
+.tab-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+
+.sp-2,
+.tab-2,
+.pc-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+
+.tab-3,
+.pc-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+
+.pc-4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+}
+
+.pc-5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+}
+
+.pc-6 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+}
+
+/* utility */
+.gap-0 {
+    gap: 0px;
+}
+
+.gap-pc-0 {
+    gap: 0px;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-pc-10 {
+    gap: 10px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.gap-pc-20 {
+    gap: 20px;
+}
+
+.gap-30 {
+    gap: 30px;
+}
+
+.gap-pc-30 {
+    gap: 30px;
+}
+
+.gap-40 {
+    gap: 40px;
+}
+
+.gap-pc-40 {
+    gap: 40px;
+}
+
+.gap-50 {
+    gap: 50px;
+}
+
+.gap-pc-50 {
+    gap: 50px;
+}
+
+.gap-60 {
+    gap: 60px;
+}
+
+.gap-pc-60 {
+    gap: 60px;
+}

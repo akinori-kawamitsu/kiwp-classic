@@ -47,28 +47,18 @@ $child_query2 =  new WP_Query( array(
 ?>
 
 <?php if ( $child_query2 -> have_posts()): ?>
-    <article class="post-list">
+    <article>
         <h2><?php echo $section_title ;?></h2>
-        <div class="flex">
-            <?php while ( $child_query2 -> have_posts()): $child_query2 -> the_post();?>
-                <section class="post-list-item">
-                    <?php if (has_post_thumbnail()):?>
-                    <a href="<?php the_permalink() ;?>" class="small-img post-list-img"><?php the_post_thumbnail( 'thumbnail' ); ?></a>
-                    <?php else: ?>
-                    <a href="<?php the_permalink() ;?>" class="no-img post-list-img">No image</a>
-                    <?php endif;?>
-                    <div class="post-list-info">
-                        <a href="<?php the_permalink() ;?>">
-                            <h2 class="post-list-heading">
-                                <span class="post-date"><?php the_time('Y/n/j');?></span>
-                                <span class="post-list-title"><?php the_title();?></span>
-                            </h2>
-                            <div class="post-list-excerpt"><?php the_excerpt() ;?></div>
-                        </a>
-                    </div>
-                </section>
-            <?php endwhile; ?>
-        </div>
+        <ul class="info-list">
+        <?php while ( $child_query2 -> have_posts()): $child_query2 -> the_post();?>
+            <li class="info-list-item">
+                <a href="<?php the_permalink() ;?>" class="info-list-link">
+                    <span class="info-list-date"><?php the_time('Y/n/j');?></span>
+                    <span class="info-list-title"><?php the_title();?></span>
+                </a>
+            </li>
+        <?php endwhile; ?>
+        </ul>
     <?php if(!array_key_exists(1, $slug_array)):?>
         <div class="aligncenter">
             <a href="<?php echo get_category_link ( get_category_by_slug($target_first)->term_id );?>" class="button-link" aria-role="button">もっと見る</a>

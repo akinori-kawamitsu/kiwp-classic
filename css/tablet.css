@@ -1,0 +1,220 @@
+@charset "utf-8";
+
+@media screen and (max-width: 960px) {
+
+    /* tabサイズで画像の回り込みを解消するクラス　br-tab */
+    .alignleft.br-tab, .alignright.br-tab {
+        float: none;
+        display: block;
+        max-width: 100%;
+        margin: 0;
+
+        &::after {
+            content: "\A";
+            white-space: pre;
+        }
+    }
+
+    /* tabサイズで中央配置にする　tab-center */
+    .tab-center, img.alignleft.tab-center, img.alignright.tab-center {
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* コンテナ */
+    .container {
+        padding: 0 10px;
+    }
+
+    /* グリッド */
+    .sp-1 {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .sp-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pc-6,
+    .pc-5,
+    .pc-4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .sp-2,
+    .tab-2,
+    .pc-3,
+    .pc-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tab-3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .tab-1 {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    /* utility */
+    .gap-0 {
+        gap: 0 px;
+    }
+
+    .gap-pc-0 {
+        gap: 0 px;
+    }
+
+    .gap-10 {
+        gap: 5 px;
+    }
+
+    .gap-pc-10 {
+        gap: 5 px;
+    }
+
+    .gap-20 {
+        gap: 10 px;
+    }
+
+    .gap-pc-20 {
+        gap: 10 px;
+    }
+
+    .gap-30 {
+        gap: 15 px;
+    }
+
+    .gap-pc-30 {
+        gap: 15 px;
+    }
+
+    .gap-40 {
+        gap: 20 px;
+    }
+
+    .gap-pc-40 {
+        gap: 20 px;
+    }
+
+    .gap-50 {
+        gap: 25 px;
+    }
+
+    .gap-pc-50 {
+        gap: 25 px;
+    }
+
+    .gap-60 {
+        gap: 30 px;
+    }
+
+    .gap-pc-60 {
+        gap: 30 px;
+    }
+
+    .gap-tab-0 {
+        gap: 0px;
+    }
+
+    .gap-tab-10 {
+        gap: 10px;
+    }
+
+    .gap-tab-20 {
+        gap: 20px;
+    }
+
+    .gap-tab-30 {
+        gap: 30px;
+    }
+
+
+
+    /* ヘッダー     */
+
+    .header-container {
+        position: relative;
+        z-index: 100;
+        height: var(--burg-btn-size);
+        display: block;
+    }
+
+    .toggle-menu {
+        position: absolute;
+        right: -100%;
+        top: 100%;
+        background-color: #FFF;
+        max-height: calc(100vh - var(--burg-btn-size));
+        overflow-y: scroll;
+
+        .sub-menu {
+            height: auto;
+            overflow: hidden;
+            position: static;
+            width: 100%;
+        }
+    }
+
+    .toggle-menu a {
+        display: block;
+        padding: 5px;
+    }
+
+    .hamburger {
+        display: block;
+        width: var(--burg-btn-size);
+        height: var(--burg-btn-size);
+    }
+
+    .js-open .toggle-menu {
+        right: 0%;
+    }
+
+    .header-logo {
+        /*
+        position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+        */
+        display: inline-block;
+        height: 44px;
+    }
+
+    /* セクションレイアウト */
+
+    .sidebar {
+        width: 100%;
+        padding: 0;
+    }
+
+    .main,
+    .top-main {
+        width: 100%;
+    }
+
+    /* ユーティリティクラス */
+    .pc, .pc-inline,
+    .sp, .sp-inline {
+        display: none;
+    }
+
+    .tab {
+        display: block;
+    }
+
+    .tab-inline {
+        display: inline;
+    }
+
+}

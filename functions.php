@@ -5,6 +5,14 @@ load_theme_textdomain( 'ki-classic', get_template_directory() . '/languages/' );
 function ki_classic_script() {
     $mtime = filemtime( get_stylesheet_directory() . '/style.css' );
 	wp_enqueue_style('ki-classic-style', get_stylesheet_uri().'?'.$mtime , array(), null, 'all');
+
+	wp_enqueue_style('reset', get_template_directory_uri().'/css/reset.css' , array(), null, 'all');
+	wp_enqueue_style('grid', get_template_directory_uri().'/css/grid-utility.css' , array(), null, 'all');
+	wp_enqueue_style('base', get_template_directory_uri().'/css/base.css?'.$mtime , array(), null, 'all');
+	wp_enqueue_style('desktop', get_template_directory_uri().'/css/desktop.css?'.$mtime , array(), null, 'all');
+	wp_enqueue_style('tablet', get_template_directory_uri().'/css/tablet.css?'.$mtime , array(), null, 'all');
+	wp_enqueue_style('mobile', get_template_directory_uri().'/css/mobile.css?'.$mtime , array(), null, 'all');
+
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'kcss', get_template_directory_uri().'/js/kcss.js', array('jquery'), null, false);
 	wp_enqueue_script( 'togglemenu', get_template_directory_uri().'/js/togglemenu.js', array('jquery'), null, false);
@@ -327,6 +335,13 @@ add_action('save_post', 'save_store_fields');
 //カスタムフィールドのデータがエクスポートできない問題対策
 add_filter('wxr_export_skip_postmeta', '__return_false', 999);
 
+//  カテゴリーの記事一覧（新着お知らせ用。投稿日とタイトルのリスト表示）:リスト形式 [info-list cat="slug" num="" title=""]または[cat-list slug num title]
+function ki_archive_info($atts, $content = null) {
+    ob_start();
+	include ( get_theme_root() . '/' . get_stylesheet() .'/phpmodule/info_list.php');
+    return ob_get_clean();
+}
+add_shortcode('info-list','ki_archive_info');
 
 //  カテゴリーの記事一覧:リスト形式 [cat-list cat="slug" num="" title=""]または[cat-list slug num title]
 function ki_archive_list($atts, $content = null) {
