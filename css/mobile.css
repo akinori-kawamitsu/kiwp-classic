@@ -3,18 +3,23 @@
 @media screen and (max-width: 640px) {
 
     /* spサイズで画像の回り込みを解消、中央配置にする。（デフォルト設定） */
-    img.alignleft, img.alignright,
-    figure.alignleft, figure.alignright {
+    img.alignleft, 
+    img.alignright,
+    figure.alignleft, 
+    figure.alignright {
         float: none;
         display: block;
         margin: 0 auto;
         position: relative;
         right: 0;
+    }
 
-        &::after {
-            content: "\A";
-            white-space: pre;
-        }
+    img.alignleft::after, 
+    img.alignright::after,
+    figure.alignleft::after, 
+    figure.alignright::after {
+        content: "\A";
+        white-space: pre;
     }
 
     /* spサイズでも画像の最大幅を50%にして、回り込みを有効にするクラス　br-no */
@@ -23,11 +28,11 @@
         display: inline;
         max-width: 50%;
         margin: 0 10px 0 0;
+    }
 
-        &::after {
-            content: "";
-            white-space: pre;
-        }
+    img.alignleft.br-no::after {
+        content: "";
+        white-space: pre;
     }
 
     img.alignright.br-no {
@@ -35,13 +40,11 @@
         display: inline;
         max-width: 50%;
         margin: 0 0 0 10px;
-
-        &::after {
-            content: "";
-            white-space: pre;
-        }
     }
-
+    img.alignright.br-no::after {
+        content: "";
+        white-space: pre;
+    }
     /* グリッド */
     .pc-6,
     .pc-5,

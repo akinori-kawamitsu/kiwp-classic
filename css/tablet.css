@@ -3,16 +3,18 @@
 @media screen and (max-width: 960px) {
 
     /* tabサイズで画像の回り込みを解消するクラス　br-tab */
-    .alignleft.br-tab, .alignright.br-tab {
+    .alignleft.br-tab, 
+    .alignright.br-tab {
         float: none;
         display: block;
         max-width: 100%;
         margin: 0;
+    }
 
-        &::after {
-            content: "\A";
-            white-space: pre;
-        }
+    .alignleft.br-tab::after, 
+    .alignright.br-tab::after {
+        content: "\A";
+        white-space: pre;
     }
 
     /* tabサイズで中央配置にする　tab-center */

@@ -299,11 +299,11 @@ a[target="_blank"]::after {
   float: none;
   display: block;
   margin: 0;
+}
 
-  &::after {
-    content: "\A";
-    white-space: pre;
-  }
+.br::after {
+  content: "\A";
+  white-space: pre;
 }
 
 :where(nav), :where(nav) ul, :where(nav) li {
@@ -403,16 +403,16 @@ a[target="_blank"]::after {
   max-width: 100%;
   margin-bottom: 10px;
 
-  &::after {
-    content: "";
-    clear: both;
-    display: block;
-  }
-
   .alignleft, .alignright, .aligncenter {
     max-width: 100%;
     display: inline;
   }
+}
+
+.wp-caption::after {
+  content: "";
+  clear: both;
+  display: block;
 }
 
 .wp-caption img {

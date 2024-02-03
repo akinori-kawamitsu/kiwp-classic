@@ -4,14 +4,20 @@ load_theme_textdomain( 'ki-classic', get_template_directory() . '/languages/' );
 // Script and css in head
 function ki_classic_script() {
     $mtime = filemtime( get_stylesheet_directory() . '/style.css' );
+    $mtime_reset = filemtime( get_stylesheet_directory() . '/css/reset.css' );
+    $mtime_grid = filemtime( get_stylesheet_directory() . '/css/grid-utility.css' );
+    $mtime_base = filemtime( get_stylesheet_directory() . '/css/base.css' );
+    $mtime_desktop = filemtime( get_stylesheet_directory() . '/css/desktop.css' );
+    $mtime_tablet = filemtime( get_stylesheet_directory() . '/css/tablet.css' );
+    $mtime_mobile = filemtime( get_stylesheet_directory() . '/css/mobile.css' );
 	wp_enqueue_style('ki-classic-style', get_stylesheet_uri().'?'.$mtime , array(), null, 'all');
 
-	wp_enqueue_style('reset', get_template_directory_uri().'/css/reset.css' , array(), null, 'all');
-	wp_enqueue_style('grid', get_template_directory_uri().'/css/grid-utility.css' , array(), null, 'all');
-	wp_enqueue_style('base', get_template_directory_uri().'/css/base.css?'.$mtime , array(), null, 'all');
-	wp_enqueue_style('desktop', get_template_directory_uri().'/css/desktop.css?'.$mtime , array(), null, 'all');
-	wp_enqueue_style('tablet', get_template_directory_uri().'/css/tablet.css?'.$mtime , array(), null, 'all');
-	wp_enqueue_style('mobile', get_template_directory_uri().'/css/mobile.css?'.$mtime , array(), null, 'all');
+	wp_enqueue_style('reset', get_template_directory_uri().'/css/reset.css?'.$mtime_reset , array(), null, 'all');
+	wp_enqueue_style('grid', get_template_directory_uri().'/css/grid-utility.css?'.$mtime_grid , array(), null, 'all');
+	wp_enqueue_style('base', get_template_directory_uri().'/css/base.css?'.$mtime_base , array(), null, 'all');
+	wp_enqueue_style('desktop', get_template_directory_uri().'/css/desktop.css?'.$mtime_desktop , array(), null, 'all');
+	wp_enqueue_style('tablet', get_template_directory_uri().'/css/tablet.css?'.$mtime_tablet , array(), null, 'all');
+	wp_enqueue_style('mobile', get_template_directory_uri().'/css/mobile.css?'.$mtime_mobile , array(), null, 'all');
 
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'kcss', get_template_directory_uri().'/js/kcss.js', array('jquery'), null, false);
