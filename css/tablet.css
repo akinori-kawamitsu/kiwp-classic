@@ -25,7 +25,9 @@
     }
 
     /* コンテナ */
-    .container {
+    .container,
+    .container-wide,
+    .container-nallow {
         padding: 0 10px;
     }
 

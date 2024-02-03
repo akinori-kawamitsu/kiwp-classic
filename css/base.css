@@ -184,7 +184,8 @@ td {
   empty-cells: show;
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 2em;
 }
 
@@ -221,33 +222,39 @@ address {
   font-style: normal;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 2.4em;
   font-weight: bold;
   margin: 0.67em 0;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 2.1em;
   font-weight: bold;
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 1.8em;
   font-weight: bold;
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: 1.6em;
   font-weight: bold;
 }
 
-h5, .h5 {
+h5,
+.h5 {
   font-size: 1.3em;
   font-weight: bold;
 }
 
-h6, .h6 {
+h6,
+.h6 {
   font-size: 1em;
   font-weight: bold;
 }
@@ -306,7 +313,9 @@ a[target="_blank"]::after {
   white-space: pre;
 }
 
-:where(nav), :where(nav) ul, :where(nav) li {
+:where(nav),
+:where(nav) ul,
+:where(nav) li {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -317,7 +326,19 @@ a[target="_blank"]::after {
 .container {
   width: 100%;
   max-width: var(--container);
-  margin: 0 auto;
+  margin-inline: auto;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.container-nallow {
+  width: 100%;
+  max-width: 42em;
+  margin-inline: auto;
 }
 
 /* 回り込み解消 */
@@ -403,7 +424,9 @@ a[target="_blank"]::after {
   max-width: 100%;
   margin-bottom: 10px;
 
-  .alignleft, .alignright, .aligncenter {
+  .alignleft,
+  .alignright,
+  .aligncenter {
     max-width: 100%;
     display: inline;
   }
@@ -524,9 +547,12 @@ a[target="_blank"]::after {
 }
 
 /* ユーティリティクラス */
-.sp, .sp-inline,
-.tab, .tab-inline, {
-  display: none;
+.sp,
+.sp-inline,
+.tab,
+.tab-inline,
+{
+display: none;
 }
 
 .pc {

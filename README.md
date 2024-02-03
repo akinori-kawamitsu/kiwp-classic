@@ -31,6 +31,7 @@ WordPressクラシックテーマ標準テンプレート
 5. desktop.css パソコンサイズ／基本での表示。ビジュアルエディタに適用する必要のないものを記載。
 6. tablet.css タブレットサイズでの表示
 7. mobile.css スマートフォンサイズでの表示
+8. ブレイクポイントはデフォルトで 960px、640px の2つ。tablet.css, mobile.css の冒頭でまとめてコントロールしてください。
 
 # デザインルール
 ## 色
@@ -57,7 +58,7 @@ WordPressクラシックテーマ標準テンプレート
 | pc-6 | デスクトップ：6カラム / タブレット：4カラム / モバイル：2カラム　で表示 |
 | tab-1 | タブレット：1カラム / モバイル：1カラム　で表示 |
 | tab-2 | タブレット：2カラム / モバイル：2カラム　で表示 |
-| tab-3 | タブレット：3カラム / モバイル：1カラム　で表示 |
+| tab-3 | タブレット：3カラム / モバイル：2カラム　で表示 |
 | sp-1 | モバイル：1カラム　で表示 |
 | gap-* <br>gap-pc-* | グリッド間のギャップを設定する。*には数字を10刻みで入れる。gap-10なら10pxのギャップになる。<br>タブレットサイズでは半分のサイズになる。<br>モバイルでは全てgap: 5px 10pxになる。 |
 | gap-tab-* | タブレットサイズで特別にギャップのサイズを指定したい場合に使う。10px刻みで30pxまで。 |
@@ -67,6 +68,8 @@ WordPressクラシックテーマ標準テンプレート
 | クラス名 | 役割 |
 |:-------------:|:-------------|
 | container | 最大幅960px、両側にマージン。最大幅以下で10pxのpadding |
+| container-wide | 最大幅1200px、両側にマージン。最大幅以下で10pxのpadding |
+| container-nallow | 最大幅42em、両側にマージン。最大幅以下で10pxのpadding |
 | clear | clear:both;を要素に設定 |
 | clearfix | 要素にclearfixを設定 |
 | list-style-none | リストの行頭記号と段落ちをなくします。 |
@@ -75,12 +78,12 @@ WordPressクラシックテーマ標準テンプレート
 | table, middle-container | display:table;にする。 |
 | table-cell | display:table-cellにする。 |
 | middle-item | display:table-cell;にして、中の要素を上下中央揃えにする。 |
-| sp-center | 576px以下で中央に配置する |
+| sp-center | 640px以下で中央に配置する |
 | mt-* | margin-topの設定。*には設定したいピクセル数を入れる。20pxまでは5刻み。20px以上は10px刻みで60pxまで設定可能。 |
 | mb-* | margin-bottomの設定。*には設定したいピクセル数を入れる。20pxまでは5刻み。20px以上は10px刻みで60pxまで設定可能。 |
-| pc, pc-inline | 769px以上で表示、768px以下ではdisplay:none;で非表示。pcはdisplay:block;、-inlineはdisplay:inline;として表示する。（以下同様） |
-| tab, tab-inline | 577px～768pxで表示、それ以外では非表示。 |
-| sp, sp-inline | 576px以下で表示、それ以外では非表示。 |
+| pc, pc-inline | 961px以上で表示、768px以下ではdisplay:none;で非表示。pcはdisplay:block;、-inlineはdisplay:inline;として表示する。（以下同様） |
+| tab, tab-inline | 641px～960pxで表示、それ以外では非表示。 |
+| sp, sp-inline | 640px以下で表示、それ以外では非表示。 |
 | youtube | 中にyoutubeの埋め込みコードを入れるとレスポンシブ対応になる。アスペクト比16:9。埋め込みコードからはflameborder="0"を削除してvalidなコードにできる。 |
 | gmap | 中にGoogle Mapの埋め込みコードを入れるとレスポンシブ対応になる。アスペクト比16:9。最大幅90% |
 | twitter | 中にtwitter埋め込みウィジェットを入れ、レスポンシブ対応にする |
@@ -90,8 +93,8 @@ WordPressクラシックテーマ標準テンプレート
 ## imgのレスポンシブ処理について
 alignleft, alignright, aligncenterでそれぞれ左寄せ、右寄せ、中心へ配置される。  
 alignleft, alignrightで画像に回り込みを設定した場合、641px以上では最大幅50％、640px以下では回り込みが解除され、最大幅100％となり、中央配置になる。
-768px以下で回り込みを解除したい場合は、br-tab　のクラスを画像に設置する。  
-また、576px以下でも回り込みを解除したくない場合は、br-no を画像に設置する。  
+960px以下で回り込みを解除したい場合は、br-tab　のクラスを画像に設置する。  
+また、640px以下でも回り込みを解除したくない場合は、br-no を画像に設置する。  
 
 # 変更履歴
 ## ver 0.1
