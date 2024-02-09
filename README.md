@@ -1,4 +1,4 @@
-# kiwp-classic 2.3
+# kiwp-classic 2.4
 WordPressクラシックテーマ標準テンプレート
 
 ## 特徴
@@ -144,3 +144,12 @@ alignleft, alignrightで画像に回り込みを設定した場合、641px以上
 + カスタムテンプレートに「最新記事一覧ページ」を追加。
 + CSSデバッグ
 + CSSファイル読み込み時のキャッシュ回避コードのデバッグ
+
+### ver 2.3
++ container-wideとcontainer-nallowを追加。
++ CSSデバッグ
++ fundctions.php CSSファイルのバージョン付加コードデバッグ
++ 最新記事一覧を表示する固定ページを追加。
+
+### ver 2.4
++ slick, aosを導入。

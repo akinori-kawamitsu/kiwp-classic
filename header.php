@@ -17,9 +17,26 @@
 	
 	<title><?php wp_title(); ?> | <?php bloginfo('name');?></title>
 
-<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
+<?php // if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
+
+<?php /* Slick Slider使用時は以下のコメントアウトを外す。 */
+ ?>
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri();?>/slick/slick.css">
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri();?>/slick/slick-theme.css">
+<?php /* Slick Slider  */ ?>
+<?php /* AOS.js使用時は以下のコメントアウトを外す。※footer.phpにも初期化コードあり。 */
+?>
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri();?>/aos/aos.css">
+	<script src="<?php echo get_stylesheet_directory_uri();?>/aos/aos.js"></script>
+<?php /* AOS.js */?>
+
 <?php wp_head(); ?>
+
 <?php get_template_part('phpmodule/ies');?>
+
+<?php /* Slick Slider使用時はこのコメントアウトを外す。 */ ?>
+	<script src="<?php echo get_stylesheet_directory_uri();?>/slick/slick.min.js"></script>
+<?php /* Slick Slider  */ ?>
 
 </head>
 <body <?php body_class(); ?>>

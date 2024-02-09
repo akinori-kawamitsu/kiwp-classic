@@ -101,6 +101,29 @@ wp_nav_menu( $fnav3 ); ?>
 			links[i].addEventListener('click', smoothScroll);
 		}
 	});
+
+<?php /* Slick Slider使用時はこのコメントアウトを外す。 */ ?>
+	jQuery(document).ready(function(){
+		jQuery('.slide').slick({
+			dots: true,
+			infinite: true,
+			speed: 500,
+			slidesToShow: 1,
+			centerMode: true,
+			variableWidth: true,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 4000,
+		});
+	});
+<?php /* Slick Slider  */ ?>
+
+<?php /* AOS.js使用時は以下のコメントアウトを外す。※header.phpにもライブラリの読み込みコードあり。 */
+?>
+	AOS.init();
+<?php /* AOS.js */?>
+
+
   </script>
 </footer>
 <?php wp_footer(); ?>
