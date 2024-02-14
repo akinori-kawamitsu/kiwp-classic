@@ -1,4 +1,4 @@
-# kiwp-classic 2.4
+# kiwp-classic 2.4.1
 WordPressクラシックテーマ標準テンプレート
 
 ## 特徴
@@ -153,3 +153,6 @@ alignleft, alignrightで画像に回り込みを設定した場合、641px以上
 
 ### ver 2.4
 + slick, aosを導入。
+
+### ver 2.4.1
++ ハンバーガーメニューのバグ修正

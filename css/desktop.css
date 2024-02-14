@@ -151,6 +151,11 @@
 .toggle-menu a {
     display: block;
     padding: 5px;
+    color: var(--color-text);
+}
+
+.toggle-menu a:hover {
+    background-color: var(--color-lightgray);
 }
 
 .hamburger {
