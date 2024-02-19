@@ -3,7 +3,7 @@
 @media screen and (max-width: 960px) {
 
     /* tabサイズで画像の回り込みを解消するクラス　br-tab */
-    .alignleft.br-tab, 
+    .alignleft.br-tab,
     .alignright.br-tab {
         float: none;
         display: block;
@@ -11,14 +11,16 @@
         margin: 0;
     }
 
-    .alignleft.br-tab::after, 
+    .alignleft.br-tab::after,
     .alignright.br-tab::after {
         content: "\A";
         white-space: pre;
     }
 
     /* tabサイズで中央配置にする　tab-center */
-    .tab-center, img.alignleft.tab-center, img.alignright.tab-center {
+    .tab-center,
+    img.alignleft.tab-center,
+    img.alignright.tab-center {
         float: none;
         display: block;
         margin: 0 auto;
@@ -69,59 +71,59 @@
 
     /* utility */
     .gap-0 {
-        gap: 0 px;
+        gap: 0px;
     }
 
     .gap-pc-0 {
-        gap: 0 px;
+        gap: 0px;
     }
 
     .gap-10 {
-        gap: 5 px;
+        gap: 5px;
     }
 
     .gap-pc-10 {
-        gap: 5 px;
+        gap: 5px;
     }
 
     .gap-20 {
-        gap: 10 px;
+        gap: 10px;
     }
 
     .gap-pc-20 {
-        gap: 10 px;
+        gap: 10px;
     }
 
     .gap-30 {
-        gap: 15 px;
+        gap: 15px;
     }
 
     .gap-pc-30 {
-        gap: 15 px;
+        gap: 15px;
     }
 
     .gap-40 {
-        gap: 20 px;
+        gap: 20px;
     }
 
     .gap-pc-40 {
-        gap: 20 px;
+        gap: 20px;
     }
 
     .gap-50 {
-        gap: 25 px;
+        gap: 25px;
     }
 
     .gap-pc-50 {
-        gap: 25 px;
+        gap: 25px;
     }
 
     .gap-60 {
-        gap: 30 px;
+        gap: 30px;
     }
 
     .gap-pc-60 {
-        gap: 30 px;
+        gap: 30px;
     }
 
     .gap-tab-0 {
@@ -139,8 +141,6 @@
     .gap-tab-30 {
         gap: 30px;
     }
-
-
 
     /* ヘッダー     */
 
@@ -174,6 +174,7 @@
     :where(nav) li {
         width: 100%;
     }
+
     .toggle-menu a {
         display: block;
         padding: 1em 10px;
@@ -216,8 +217,10 @@
     }
 
     /* ユーティリティクラス */
-    .pc, .pc-inline,
-    .sp, .sp-inline {
+    .pc,
+    .pc-inline,
+    .sp,
+    .sp-inline {
         display: none;
     }
 

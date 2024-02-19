@@ -156,3 +156,7 @@ alignleft, alignrightで画像に回り込みを設定した場合、641px以上
 
 ### ver 2.4.1
 + ハンバーガーメニューのバグ修正
+
+### ver 2.4.2
++ ブラウザをアップデートしないMacユーザーのためCSSの入れ子を外す
++ editor-styleにdesktop.cssを読み込ませる修正

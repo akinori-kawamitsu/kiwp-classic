@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#">
 	<meta charset="<?php bloginfo('charset'); ?>">
-	<meta name="viewport" content="width=device-width, initial-scall=1.0">
+	<meta name="viewport" content="width=device-width">
 	<meta name="description" content="<?php if (is_single()||is_page()) {
 		echo wp_strip_all_tags( get_the_excerpt(), true );
 	} elseif (is_category()) {

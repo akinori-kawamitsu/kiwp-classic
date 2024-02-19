@@ -23,12 +23,12 @@
     padding-top: 40px;
     margin-top: 40px;
     background-color: #EEE;
+}
 
-    h3 {
-        margin: 0;
-        font-size: var(--fs-20);
-        text-align: center;
-    }
+.footer h3 {
+    margin: 0;
+    font-size: var(--fs-20);
+    text-align: center;
 }
 
 .footer-container {
@@ -172,20 +172,20 @@
 .toggle-menu {
     display: flex;
     position: relative;
+}
 
-    .sub-menu {
-        height: 0;
-        overflow: hidden;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #FFF;
-    }
+.toggle-menu .sub-menu {
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #FFF;
+}
 
-    :where(.menu-item:hover)>.sub-menu {
-        height: auto;
-    }
+.toggle-menu :where(.menu-item:hover)>.sub-menu {
+    height: auto;
 }
 
 
@@ -204,7 +204,7 @@
 
 .gnav {}
 
-// breadcrumb パンくずリスト
+/* breadcrumb パンくずリスト */
 .breadcrumb {
     padding: 10px 0;
     width: 100%;
@@ -212,32 +212,32 @@
     margin: auto;
 }
 
-:where(.breadcrumb) {
-    ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    li {
-        display: inline-block;
-        margin-right: 1em;
-    }
-
-    li:not(:last-child)::after {
-        content: ">";
-        margin-left: 0.5em;
-    }
-
-    a:link,
-    a:visited {
-        color: var(--color-text);
-    }
-
-    a:hover,
-    a:active {
-        color: var(--color-link-text);
-    }
+:where(.breadcrumb) ul {
+    list-style: none;
+    padding: 0;
 }
+
+:where(.breadcrumb) li {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+:where(.breadcrumb) li:not(:last-child)::after {
+    content: ">";
+    margin-left: 0.5em;
+}
+
+:where(.breadcrumb) a:link,
+:where(.breadcrumb) a:visited {
+    color: var(--color-text);
+}
+
+:where(.breadcrumb) a:hover,
+:where(.breadcrumb) a:active {
+    color: var(--color-link-text);
+}
+
+
 
 /* ボタン */
 .button {}
@@ -421,11 +421,11 @@ article {
     justify-content: center;
     overflow: hidden;
     position: relative;
+}
 
-    img {
-        width: 100%;
-        height: auto;
-    }
+.page-kv img {
+    width: 100%;
+    height: auto;
 }
 
 /* archiveページ */
@@ -438,11 +438,11 @@ article {
     display: flex;
     justify-content: space-between;
     border-top: 1px solid var(--color-bg-gray);
+}
 
-    a {
-        padding: 10px 0;
-        display: inline-block;
-    }
+.post-nav a {
+    padding: 10px 0;
+    display: inline-block;
 }
 
 /* パララックス設定 */
