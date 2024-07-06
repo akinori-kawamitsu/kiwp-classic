@@ -4,7 +4,7 @@ Theme URI: https://github.com/akinori-kawamitsu/ki-classic
 Author: akinori kawamitsu
 Author URI: http://komitsuboshi.com
 Description: 
-Version: 2.1
+Version: 2.5
 License: MIT License
 License URI: https://opensource.org/licenses/MIT
 Text Domain: ki-classic
@@ -18,7 +18,6 @@ CSSファイル類について
 2. base.css
 　　CSS変数、要素セレクタ、WordPress が出力するクラスに対するCSS。
 　　editor-style.css に @import で読み込ませる。
-　　ビジュアルエディタにも反映させたいスタイルを記載する。
 3. style.css
 　　テーマ名の記載
 4. grid-utility.css

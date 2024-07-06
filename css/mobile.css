@@ -63,6 +63,146 @@
         grid-template-columns: 1fr;
     }
 
+    .col-11, .col-10, .col-9 {
+        width: 66.6666%;
+    }
+    .col-8, .col-7 {
+        width: 50%;
+    }
+    .col-6 {
+        width: 50%;
+    }
+    .col-5, .col-4 {
+        width: 50%;
+    }
+    .col-3, .col-2, .col-1 {
+        width: 33.3333%;
+    }
+
+    .col-6-7, .col-5-7 {
+        width: 75%;
+    }
+    .col-4-7, .col-3-7 {
+        width: 50%;
+    }
+    .col-2-7, .col-1-7 {
+        width: 25%;
+    }
+
+    .col-4-5 {
+        width: 75%;
+    }
+    .col-3-5 {
+        width: 50%;
+    }
+    .col-2-5 {
+        width: 50%;
+    }
+    .col-1-5 {
+        width: 25%;
+    }
+
+    
+    .col-sp-12 {
+        width: 100%;
+    }
+    .col-sp-11 {
+        width: 91.6666%;
+    }
+    .col-sp-10 {
+        width: 83.3333%;
+    }
+    .col-sp-9 {
+        width: 75%;
+    }
+    .col-sp-8 {
+        width: 66.6666%;
+    }
+    .col-sp-7 {
+        width: 58.3333%;
+    }
+    .col-sp-6 {
+        width: 50%;
+    }
+    .col-sp-5 {
+        width: 41.6666%;
+    }
+    .col-sp-4 {
+        width: 33.3333%;
+    }
+    .col-sp-3 {
+        width: 25%;
+    }
+    .col-sp-2 {
+        width: 16.6666%;
+    }
+    .col-sp-1 {
+        width: 8.3333%;
+    }
+    .col-sp-6-7 {
+        width: 85.7142%;
+    }
+    .col-sp-5-7 {
+        width: 71.4285%;
+    }
+    .col-sp-4-7 {
+        width: 57.1428%;
+    }
+    .col-sp-3-7 {
+        width: 42.8571%;
+    }
+    .col-sp-2-7 {
+        width: 28.5714%;
+    }
+    .col-sp-1-7 {
+        width: 14.2857%;
+    }
+    .col-sp-4-5 {
+        width: 80%;
+    }
+    .col-sp-3-5 {
+        width: 60%;
+    }
+    .col-sp-2-5 {
+        width: 40%;
+    }
+    .col-sp-1-5 {
+        width: 20%;
+    }
+
+    /* utility */
+
+    .pd-sp-0 {
+        padding: 0px;
+    }
+    .pd-sp-5 {
+        padding: 5px;
+    }
+    .pd-sp-10 {
+        padding: 10px;
+    }
+    .pd-sp-15 {
+        padding: 15px;
+    }
+    .pd-sp-20 {
+        padding: 20px;
+    }
+    .pi-sp-0 {
+        padding-inline: 0px;
+    }
+    .pi-sp-5 {
+        padding-inline: 5px;
+    }
+    .pi-sp-10 {
+        padding-inline: 10px;
+    }
+    .pi-sp-15 {
+        padding-inline: 15px;
+    }
+    .pi-sp-20 {
+        padding-inline: 20px;
+    }
+
     .gap-0 {
         gap: 5px 10px;
     }

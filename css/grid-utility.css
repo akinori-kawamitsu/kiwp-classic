@@ -41,6 +41,183 @@
     width: 100%;
 }
 
+/* 12グリッドユーティリティ */
+.flex {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.flex-r {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	flex-direction: row-reverse;
+}
+.col-12, .col-sp-12, .col-tab-12 {
+    width: 100%;
+}
+.col-11, .col-sp-11, .col-tab-11 {
+    width: 91.6666%;
+}
+.col-10, .col-sp-10, .col-tab-10 {
+    width: 83.3333%;
+}
+.col-9, .col-sp-9, .col-tab-9 {
+    width: 75%;
+}
+.col-8, .col-sp-8, .col-tab-8 {
+    width: 66.6666%;
+}
+.col-7, .col-sp-7, .col-tab-7 {
+    width: 58.3333%;
+}
+.col-6, .col-sp-6, .col-tab-6 {
+    width: 50%;
+}
+.col-5, .col-sp-5, .col-tab-5 {
+    width: 41.6666%;
+}
+.col-4, .col-sp-4, .col-tab-4 {
+    width: 33.3333%;
+}
+.col-3, .col-sp-3, .col-tab-3 {
+    width: 25%;
+}
+.col-2, .col-sp-2, .col-tab-2 {
+    width: 16.6666%;
+}
+.col-1, .col-sp-1, .col-tab-1 {
+    width: 8.3333%;
+}
+.col-6-7, .col-sp-6-7, .col-tab-6-7 {
+    width: 85.7142%;
+}
+.col-5-7, .col-sp-5-7, .col-tab-5-7 {
+    width: 71.4285%;
+}
+.col-4-7, .col-sp-4-7, .col-tab-4-7 {
+    width: 57.1428%;
+}
+.col-3-7, .col-sp-3-7, .col-tab-3-7 {
+    width: 42.8571%;
+}
+.col-2-7, .col-sp-2-7, .col-tab-2-7 {
+    width: 28.5714%;
+}
+.col-1-7, .col-sp-1-7, .col-tab-1-7 {
+    width: 14.2857%;
+}
+.col-4-5, .col-sp-4-5, .col-tab-4-5 {
+    width: 80%;
+}
+.col-3-5, .col-sp-3-5, .col-tab-3-5 {
+    width: 60%;
+}
+.col-2-5, .col-sp-2-5, .col-tab-2-5 {
+    width: 40%;
+}
+.col-1-5, .col-sp-1-5, .col-tab-1-5 {
+    width: 20%;
+}
+.col-pc-12 {
+    width: 100%;
+}
+.col-pc-11 {
+    width: 91.6666%;
+}
+.col-pc-10 {
+    width: 83.3333%;
+}
+.col-pc-9 {
+    width: 75%;
+}
+.col-pc-8 {
+    width: 66.6666%;
+}
+.col-pc-7 {
+    width: 58.3333%;
+}
+.col-pc-6 {
+    width: 50%;
+}
+.col-pc-5 {
+    width: 41.6666%;
+}
+.col-pc-4 {
+    width: 33.3333%;
+}
+.col-pc-3 {
+    width: 25%;
+}
+.col-pc-2 {
+    width: 16.6666%;
+}
+.col-pc-1 {
+    width: 8.3333%;
+}
+.col-pc-6-7 {
+    width: 85.7142%;
+}
+.col-pc-5-7 {
+    width: 71.4285%;
+}
+.col-pc-4-7 {
+    width: 57.1428%;
+}
+.col-pc-3-7 {
+    width: 42.8571%;
+}
+.col-pc-2-7 {
+    width: 28.5714%;
+}
+.col-pc-1-7 {
+    width: 14.2857%;
+}
+.col-pc-4-5 {
+    width: 80%;
+}
+.col-pc-3-5 {
+    width: 60%;
+}
+.col-pc-2-5 {
+    width: 40%;
+}
+.col-pc-1-5 {
+    width: 20%;
+}
+
+.pd-0 {
+    padding: 0px;
+}
+.pd-5 {
+    padding: 5px;
+}
+.pd-10 {
+    padding: 10px;
+}
+.pd-15 {
+    padding: 15px;
+}
+.pd-20 {
+    padding: 20px;
+}
+.pi-0 {
+    padding-inline: 0px;
+}
+.pi-5 {
+    padding-inline: 5px;
+}
+.pi-10 {
+    padding-inline: 10px;
+}
+.pi-15 {
+    padding-inline: 15px;
+}
+.pi-20 {
+    padding-inline: 20px;
+}
+
 /* utility */
 .gap-0 {
     gap: 0px;

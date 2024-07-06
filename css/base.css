@@ -403,19 +403,6 @@ a[target="_blank"]::after {
 	display: table-cell;
 }
 
-.flex {
-	display: flex;
-	width: 100%;
-	flex-wrap: wrap;
-}
-
-.flex-r {
-	display: flex;
-	width: 100%;
-	flex-wrap: wrap;
-	flex-direction: row-reverse;
-}
-
 /* WordPress が独自に出力するクラス クラシックテーマ用 */
 .wp-caption p.wp-caption-text {
 	font-size: 14px;

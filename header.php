@@ -3,28 +3,18 @@
 <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#">
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width">
-	<meta name="description" content="<?php if (is_single()||is_page()) {
-		echo wp_strip_all_tags( get_the_excerpt(), true );
-	} elseif (is_category()) {
-		echo wp_strip_all_tags( get_the_archive_description(), true );
-	} elseif (is_tag()) {
-		echo "タグ：". wp_strip_all_tags( single_tag_title(), true );
-	} else {
-		echo wp_strip_all_tags( bloginfo( "description" ), true );
-	}
-	?>">
 	<?php get_template_part('phpmodule/ogp');?>
 	
-	<title><?php wp_title(); ?> | <?php bloginfo('name');?></title>
+	<title><?php wp_title(); if(is_front_page()){ bloginfo('description'); }?> | <?php bloginfo('name');?></title>
 
 <?php // if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
 
-<?php /* Slick Slider使用時は以下のコメントアウトを外す。 */
+<?php /* Slick Slider使用時は以下のコメントアウトを外す。 
  ?>
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri();?>/slick/slick.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri();?>/slick/slick-theme.css">
 <?php /* Slick Slider  */ ?>
-<?php /* AOS.js使用時は以下のコメントアウトを外す。※footer.phpにも初期化コードあり。 */
+<?php /* AOS.js使用時は以下のコメントアウトを外す。※footer.phpにも初期化コードあり。 
 ?>
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri();?>/aos/aos.css">
 	<script src="<?php echo get_stylesheet_directory_uri();?>/aos/aos.js"></script>
@@ -34,7 +24,7 @@
 
 <?php get_template_part('phpmodule/ies');?>
 
-<?php /* Slick Slider使用時はこのコメントアウトを外す。 */ ?>
+<?php /* Slick Slider使用時はこのコメントアウトを外す。  ?>
 	<script src="<?php echo get_stylesheet_directory_uri();?>/slick/slick.min.js"></script>
 <?php /* Slick Slider  */ ?>
 
