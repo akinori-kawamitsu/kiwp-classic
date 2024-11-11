@@ -1,4 +1,4 @@
-# kiwp-classic 2.5
+# kiwp-classic 2.5.1
 WordPressクラシックテーマ標準テンプレート
 
 ## 特徴
@@ -201,3 +201,6 @@ alignleft, alignrightで画像に回り込みを設定した場合、641px以上
 + ogp.php の仕様を変更。descriptionを統一。メタタグにtwitter cardを追加。
 + 12+2グリッドを復活。但しデフォルトでのmargin, paddingの指定なし。marginは常に0。
 + paddingのユーティリティ新設（.pd-*, .pd-tab-*, .pd-sp-* と .pi-*, pi-tab-*, pi-sp-* ）
+
+### ver 2.5.1
++ ブログのdescriptionを設定するとhead内にテキストがそのまま出力されるバグをとりあえず削除。ogp.php メタタグのtwitter cardからbloginfo("description")を削除。

@@ -9,7 +9,7 @@
 <?php
 if (is_singular() || is_front_page() || is_home() && ! is_archive()  ){
      if(have_posts()): while(have_posts()): the_post();
-          echo '<meta property="og:title" content="' . bloginfo("description") . ' | '  .the_title("", "", false). '" />';echo "\n";
+          echo '<meta property="og:title" content="' .the_title("", "", false). '" />';echo "\n";
           echo '<meta property="og:description" content="'.get_the_excerpt().'" />';echo "\n";
           echo '<meta name="description" content="'.get_the_excerpt().'" />';echo "\n";
      endwhile; endif;
