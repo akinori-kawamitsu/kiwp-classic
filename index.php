@@ -13,7 +13,7 @@
 				<?php  ki_breadcrumb() ;?>
 				<h1 class="post-title"><?php echo get_the_title();?></h1>
 					<div <?php post_class();?>><?php the_content() ;?></div>
-					<?php comments_template(); ?>
+					<?php //comments_template(); ?>
 			</div>
 		</main>
 	</div>

@@ -1,4 +1,4 @@
-# kiwp-classic 2.5.1
+# kiwp-classic 2.6.0
 WordPressクラシックテーマ標準テンプレート
 
 ## 特徴
@@ -204,3 +204,7 @@ alignleft, alignrightで画像に回り込みを設定した場合、641px以上
 
 ### ver 2.5.1
 + ブログのdescriptionを設定するとhead内にテキストがそのまま出力されるバグをとりあえず削除。ogp.php メタタグのtwitter cardからbloginfo("description")を削除。
+
+### ver 2.6.0
++ 固定ページテンプレートで、子ページも続けて表示するのを廃止。同機能は別テンプレートに。
++ コメントテンプレートの読み込みをデフォルトで無効化
