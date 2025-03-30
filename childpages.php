@@ -47,7 +47,6 @@ get_header(); ?>
 	<section class="container">
 		<h1 class="post-title"><?php echo get_the_title();?></h1>
 		<div <?php post_class();?>><?php the_content() ;?></div>
-		<?php comments_template(); ?>
 	</section>
 
 	<?php endwhile ; endif ;?>

@@ -13,7 +13,7 @@
 					<?php endif;?>
 					<h2 class="card-post-title"><a href="<?php the_permalink() ;?>"><?php echo wp_strip_all_tags( mb_substr( $post->post_title, 0, 25)  ,true ) ;?></a></h2>
 					<div class="card-post-excerpt"><?php echo wp_strip_all_tags( mb_substr( get_the_excerpt(), 0, 50 ) ,true )  ;?></div>
-					<div class="card-more" aria-role="button"><a href="<?php the_permalink() ;?>" class="card-more-btn">詳しく</a></div>
+					<div class="card-more" role="button"><a href="<?php the_permalink() ;?>" class="card-more-btn">詳しく</a></div>
 				</section>
 				<?php endwhile; ?>
 				</div>

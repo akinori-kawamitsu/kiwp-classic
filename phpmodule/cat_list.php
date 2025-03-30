@@ -71,7 +71,7 @@ $child_query2 =  new WP_Query( array(
         </div>
     <?php if(!array_key_exists(1, $slug_array)):?>
         <div class="aligncenter">
-            <a href="<?php echo get_category_link ( get_category_by_slug($target_first)->term_id );?>" class="button-link" aria-role="button">もっと見る</a>
+            <a href="<?php echo get_category_link ( get_category_by_slug($target_first)->term_id );?>" class="button-link" role="button">もっと見る</a>
         </div>
     <?php endif;?>
     </article>

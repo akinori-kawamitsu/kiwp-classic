@@ -6,16 +6,19 @@
 <?php endif ;?>
 <meta property="og:url" content="<?php echo 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" />
 <meta name="twitter:card" content="summary_large_image" />
-<?php
+
+<?php 
 if (is_singular() || is_front_page() || is_home() && ! is_archive()  ){
      if(have_posts()): while(have_posts()): the_post();
-          echo '<meta property="og:title" content="' .the_title("", "", false). '" />';echo "\n";
-          echo '<meta property="og:description" content="'.get_the_excerpt().'" />';echo "\n";
-          echo '<meta name="description" content="'.get_the_excerpt().'" />';echo "\n";
+          echo '<meta property="og:title" content="' .get_the_title().'|'. get_bloginfo('description'). ' " /> '; echo "\n";
+          echo '<meta property="og:description" content="'.get_the_excerpt().'" />'; echo "\n";
+          echo '<meta name="description" content="'.get_the_excerpt().'" />'; echo "\n";
      endwhile; endif;
 } else {
-     echo '<meta property="og:title" content="'; bloginfo('name'); echo'" />';echo "\n";
-     echo '<meta property="og:description" content="'; bloginfo('description'); echo '" />';echo "\n";
+     echo '<meta property="og:title" content="' .get_bloginfo('name'). '" />';
+     echo "\n";
+     echo '<meta property="og:description" content="' . get_bloginfo('description').  '" />';
+     echo "\n";
 }
 ?>
 <?php 

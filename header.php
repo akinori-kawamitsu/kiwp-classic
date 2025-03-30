@@ -55,9 +55,9 @@
 	'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 );
 wp_nav_menu( $gnav );?>
-		<button class="hamburger" id="hamburger" onclick="navopen()">
-			<span class="burg-line-tc" aria-role="presentation"></span>
-			<span class="burg-line-b" aria-role="presentation"></span>
+		<button class="hamburger" id="hamburger" onclick="navopen()" title="メニュー">
+			<span class="burg-line-tc" role="presentation"></span>
+			<span class="burg-line-b" role="presentation"></span>
 			<span class="burg-text"></span>
 		</button>
 	</div>

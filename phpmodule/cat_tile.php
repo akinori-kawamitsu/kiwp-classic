@@ -58,13 +58,13 @@ $child_query1 =  new WP_Query( array(
             <?php endif;?>
             <h2 class="card-post-title"><a href="<?php the_permalink() ;?>"><?php the_title();?></a></h2>
             <div class="card-post-excerpt"><?php echo wp_strip_all_tags( mb_substr( get_the_excerpt(), 0, 50 ) , true ) ;?></div>
-            <div class="card-more" aria-role="button"><a href="<?php the_permalink() ;?>" class="card-more-btn">詳しく</a></div>
+            <div class="card-more" role="button"><a href="<?php the_permalink() ;?>" class="card-more-btn">詳しく</a></div>
         </section>
         <?php endwhile; ?>
     </div>
     <?php if(!array_key_exists(1, $slug_array)):?>
     <div class="aligncenter mt-30">
-        <a href="<?php ki_cat_link($target_slug);?>" class="button-link" aria-role="button">一覧へ</a>
+        <a href="<?php ki_cat_link($target_slug);?>" class="button-link" role="button">一覧へ</a>
     </div>
     <?php endif;?>
 </section>

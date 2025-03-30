@@ -33,12 +33,12 @@
 					<?php endif;?>
 					<h2 class="card-post-title"><a href="<?php the_permalink() ;?>"><?php echo wp_strip_all_tags( mb_substr( $post->post_title, 0, 20) , true );?></a></h2>
 					<div class="card-post-excerpt"><?php echo wp_strip_all_tags( mb_substr( get_the_excerpt(), 0, 50 ) , true ) ;?></div>
-					<div class="card-more" aria-role="button"><a href="<?php the_permalink() ;?>" class="card-more-btn">詳しく</a></div>
+					<div class="card-more" role="button"><a href="<?php the_permalink() ;?>" class="card-more-btn">詳しく</a></div>
 				</section>
 				<?php endwhile; ?>
 			</div>
 			<div class="aligncenter mt-30 clear">
-				<a href="<?php ki_cat_link('uncategorized');?>" class="button-link" aria-role="button">もっと見る</a>
+				<a href="<?php ki_cat_link('uncategorized');?>" class="button-link" role="button">もっと見る</a>
 			</div>
 		</article>
 		<?php endif; wp_reset_postdata();?>
@@ -66,7 +66,7 @@
 					</section>
 					<?php endwhile; ?>
 					<div class="aligncenter">
-						<a href="<?php ki_cat_link('ページ分け');?>" class="button-link-accent" aria-role="button">もっと見る</a>
+						<a href="<?php ki_cat_link('ページ分け');?>" class="button-link-accent" role="button">もっと見る</a>
 					</div>
 				<?php endif; wp_reset_postdata();?>
 			</article>
