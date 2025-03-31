@@ -4,58 +4,58 @@
 /* Noto Sans */
 @font-face {
 	font-family: "noto-sans";
-	src: url(./font/Noto_Sans_Subset/NotoSansJP-Light-Subset.woff2) format("woff2");
+	src: url(../font/Noto_Sans_Subset/NotoSansJP-Light-Subset.woff2) format("woff2");
 	font-weight: normal;
 }
 
 @font-face {
 	font-family: "noto-sans";
-	src: url(./font/Noto_Sans_Subset/NotoSansJP-Medium-Subset.woff2) format("woff2");
+	src: url(../font/Noto_Sans_Subset/NotoSansJP-Medium-Subset.woff2) format("woff2");
 	font-weight: bold;
 }
 
 /* @font-face {
     font-family: "noto-sans";
-     src: url(./font/Noto_Sans_Subset/NotoSansJP-Bold-Subset.woff2) format("woff2");
+     src: url(../font/Noto_Sans_Subset/NotoSansJP-Bold-Subset.woff2) format("woff2");
      font-weight: bold;
  } */
 /* Noto Serif */
 /* @font-face {
     font-family: "noto-serif";
-    src: url(./font/Noto-Serif-Subset/NotoSerifJP-Regular-Subset.woff2) format("woff2");
+    src: url(../font/Noto-Serif-Subset/NotoSerifJP-Regular-Subset.woff2) format("woff2");
     font-weight: normal;
 }
 @font-face {
     font-family: "noto-serif";
-    src: url(./font/Noto-Serif-Subset/NotoSerifJP-Bold-Subset.woff2) format("woff2");
+    src: url(../font/Noto-Serif-Subset/NotoSerifJP-Bold-Subset.woff2) format("woff2");
     font-weight: bold;
 } */
 /* Kosugi Maru Goshic */
 /* @font-face {
     font-family: "kosugimaru";
-    src: url(./font/Kosugi_Maru_Subset/KosugiMaru-Regular-Subset.woff2) format("woff2");
+    src: url(../font/Kosugi_Maru_Subset/KosugiMaru-Regular-Subset.woff2) format("woff2");
 } */
 /* Zen Old Mincho */
 /* @font-face {
     font-family: "zen-mincho";
-    src: url(./font/ZenOld_Mincho_Subset/ZenOldMincho-R-subset.woff2) format("woff2");
+    src: url(../font/ZenOld_Mincho_Subset/ZenOldMincho-R-subset.woff2) format("woff2");
     font-weight: normal;
 }
 @font-face {
     font-family: "zen-mincho";
-    src: url(./font/ZenOld_Mincho_Subset/ZenOldMincho-B-subset.woff2) format("woff2");
+    src: url(../font/ZenOld_Mincho_Subset/ZenOldMincho-B-subset.woff2) format("woff2");
     font-weight: bold;
 } */
 /* Font awesome */
 @font-face {
 	font-family: "fa";
-	src: url(./font/fa-regular-400.woff2) format("woff2");
+	src: url(../font/fa-regular-400.woff2) format("woff2");
 	font-weight: normal;
 }
 
 @font-face {
 	font-family: "fa";
-	src: url(./font/fa-solid-900.woff2) format("woff2");
+	src: url(../font/fa-solid-900.woff2) format("woff2");
 	font-weight: bold;
 }
 
