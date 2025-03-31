@@ -1,4 +1,4 @@
-# kiwp-classic 2.7.0
+# kiwp-classic 2.7.1
 WordPressクラシックテーマ標準テンプレート
 
 ## 特徴
@@ -216,3 +216,6 @@ alignleft, alignrightで画像に回り込みを設定した場合、641px以上
 + コンテナ無しの固定ページテンプレート（wide-page.php）を追加
 + lp用テンプレート（lp.php、lp.css）を追加
 + firefox専用CSSの追加
+
+### ver 2.7.1
++ サブセットフォントにNotoSansJP-Semibold を追加
