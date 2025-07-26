@@ -3,6 +3,7 @@
 <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#">
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width">
+	<meta name="format-detection" content="telephone=no">
 	<?php get_template_part('phpmodule/ogp');?>
 	
 	<title><?php wp_title(); if(is_front_page()){ bloginfo('description'); }?> | <?php bloginfo('name');?></title>
