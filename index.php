@@ -2,26 +2,26 @@
 <?php if (have_posts()): ?>
 <?php while (have_posts()): the_post();
 ?>
-	<?php if (has_post_thumbnail() ) :?>
-	<div class="page-kv"><?php the_post_thumbnail( 'full' );?></div>
-	<?php endif;?>
 	
-	<div class="content-wrapper">
-		<main id="main" class="main" role="main">
+	<main id="main" class="post-main" role="main">
 
-			<div class="container">
-				<?php  ki_breadcrumb() ;?>
-				<h1 class="post-title"><?php echo get_the_title();?></h1>
-					<div <?php post_class();?>><?php the_content() ;?></div>
-					<?php //comments_template(); ?>
-			</div>
-		</main>
-	</div>
+		<div class="container">
+			<?php if (has_post_thumbnail() ) :?>
+			<div class="post-kv"><?php the_post_thumbnail( 'full' );?></div>
+			<?php endif;?>
+
+			<?php  ki_breadcrumb() ;?>
+			<h1 class="post-title"><?php echo get_the_title();?></h1>
+			<div <?php post_class();?>><?php the_content() ;?></div>
+			<?php //comments_template(); ?>
+		</div>
+
+	</main>
 		<?php
 		$prev_post = get_previous_post(true); // 同一カテゴリに属する前の投稿を取得
 		$next_post = get_next_post(true); // 同一カテゴリに属する次の投稿を取得
 		?>
-		<div class="post-nav">
+		<div class="post-nav container">
 			<div class="prevpost">
 			<?php if( $prev_post ):?>
 			<a href="<?php echo get_permalink($prev_post->ID); ?>"> 前の記事：「<?php echo get_the_title($prev_post->ID); ?>」 </a>
@@ -33,6 +33,7 @@
 			<?php endif; ?>
 			</div>
 		</div>
+
 	<?php endwhile; ?>
 
 	<?php

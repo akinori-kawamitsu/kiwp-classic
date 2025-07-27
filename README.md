@@ -1,4 +1,4 @@
-# kiwp-classic 2.7.2
+# kiwp-classic 2.7.3
 WordPressクラシックテーマ標準テンプレート
 
 ## 特徴
@@ -222,3 +222,11 @@ alignleft, alignrightで画像に回り込みを設定した場合、641px以上
 + 
 ### ver 2.7.2
 + ウェブフォントを読み込めないバグを修正（読み込みのパス修正）
+
+### ver 2.7.3
++ .header-containerのheight指定を削除
++ autopの無効化コードの用意（副作用が強いのでコメントアウト中。Advancet Editor Toolの機能を使うのを推奨。）
++ iOSで電話番号が自動的にリンクになるのを拒否するコードを追加。
++ AOS.jsを削除。（動作不良のため）
++ Contact Form 7にサンクスページを設置するサンプルコードをfooter.phpに追加。（デフォルトでコメントアウト）
++ index.phpのアイキャッチ画像をcontainer内に収納。アイキャッチのコンテナ名を.post-kvに変更

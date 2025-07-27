@@ -116,6 +116,10 @@ function ki_catlist() {
 	echo '</ul>';
 }
 
+// wpautop（自動pタグ挿入）を無効化
+// remove_filter('the_content', 'wpautop');
+// remove_filter('the_excerpt', 'wpautop');
+
 // Title tag
 
 /*

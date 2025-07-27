@@ -131,7 +131,6 @@
 .header-container {
     position: relative;
     z-index: 100;
-    height: var(--burg-btn-size);
     display: flex;
     justify-content: space-between;
     align-items: center;

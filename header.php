@@ -15,11 +15,6 @@
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri();?>/slick/slick.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri();?>/slick/slick-theme.css">
 <?php /* Slick Slider  */ ?>
-<?php /* AOS.js使用時は以下のコメントアウトを外す。※footer.phpにも初期化コードあり。 
-?>
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri();?>/aos/aos.css">
-	<script src="<?php echo get_stylesheet_directory_uri();?>/aos/aos.js"></script>
-<?php /* AOS.js */?>
 
 <?php wp_head(); ?>
 

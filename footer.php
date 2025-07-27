@@ -118,11 +118,15 @@ wp_nav_menu( $fnav3 ); ?>
 	});
 <?php /* Slick Slider  */ ?>
 
-<?php /* AOS.js使用時は以下のコメントアウトを外す。※header.phpにもライブラリの読み込みコードあり。 */
-?>
-	AOS.init();
-<?php /* AOS.js */?>
-
+<?php /* Contact Form 7にサンクスページを設置するサンプルコード ?>
+<?php if(is_page( "contact" )):?>
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+    setTimeout( () => {
+        location = '<?php echo get_home_url()?>/contact/thanks/';
+    }, 1000 ); // Wait for 3 seconds to redirect.
+}, false );
+<?php endif;?>
+<?php */?>
 
   </script>
 </footer>
