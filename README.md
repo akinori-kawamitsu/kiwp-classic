@@ -219,7 +219,7 @@ alignleft, alignrightで画像に回り込みを設定した場合、641px以上
 
 ### ver 2.7.1
 + サブセットフォントにNotoSansJP-Semibold を追加
-+ 
+
 ### ver 2.7.2
 + ウェブフォントを読み込めないバグを修正（読み込みのパス修正）
 
@@ -230,3 +230,8 @@ alignleft, alignrightで画像に回り込みを設定した場合、641px以上
 + AOS.jsを削除。（動作不良のため）
 + Contact Form 7にサンクスページを設置するサンプルコードをfooter.phpに追加。（デフォルトでコメントアウト）
 + index.phpのアイキャッチ画像をcontainer内に収納。アイキャッチのコンテナ名を.post-kvに変更
+
+### ver 2.7.4
++ フォント追加（IPAフォント、Josefin_Sans, Jost）。
++ 既設置フォントのウェイトの不足を解消。
++ 欧文フォント以外は woff2 のみ（ttfなどは消去）にして軽量化
