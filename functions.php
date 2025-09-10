@@ -94,6 +94,9 @@ add_theme_support('custom-header', array(
 	'admin-preview-callback'=> '',
 ));
 
+// 画像のsrcsetを無効化。Chrome系バグ対策
+add_filter('wp_calculate_image_srcset_meta', '__return_null');
+
 // Setting content width
 if ( ! isset( $content_width ) ) $content_width = 960;
 
