@@ -285,7 +285,6 @@
     .header-container {
         position: relative;
         z-index: 100;
-        height: var(--burg-btn-size);
         display: block;
     }
 
