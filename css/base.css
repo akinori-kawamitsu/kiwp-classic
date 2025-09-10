@@ -74,7 +74,6 @@
 	--fs-40: 2.5rem;
 	--fs-p: 1rem;
 	--fs-small: 0.0875rem;
-	font-size: var(--fs-p);
 
 	/* --font-serif: "noto-serif", "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif; */
 	/* --font-sanserif: "noto-sans", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif; */
@@ -116,7 +115,6 @@ body {
 	font-weight: normal;
 	word-break: break-all;
 	word-break: auto-phrase;
-	text-wrap: balance;
 }
 
 kbd {
