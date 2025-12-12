@@ -8,17 +8,19 @@
 <meta name="twitter:card" content="summary_large_image" />
 
 <?php 
-if (is_singular() || is_front_page() || is_home() && ! is_archive()  ){
+if (is_front_page() || is_home()   ){
      if(have_posts()): while(have_posts()): the_post();
-          echo '<meta property="og:title" content="' .get_the_title().'|'. get_bloginfo('description'). ' " /> '; echo "\n";
+          echo '<meta property="og:title" content="' . get_bloginfo('description'). ' | '.get_bloginfo('name'). ' " /> '; echo "\n";
           echo '<meta property="og:description" content="'.get_the_excerpt().'" />'; echo "\n";
           echo '<meta name="description" content="'.get_the_excerpt().'" />'; echo "\n";
      endwhile; endif;
+} elseif(is_singular() && ! is_archive()) {
+          echo '<meta property="og:title" content="' .wp_title( "",false).  ' | '.get_bloginfo('name').' " /> '; echo "\n";
+          echo '<meta property="og:description" content="'.get_the_excerpt().'" />'; echo "\n";
+          echo '<meta name="description" content="'.get_the_excerpt().'" />'; echo "\n";
 } else {
-     echo '<meta property="og:title" content="' .get_bloginfo('name'). '" />';
-     echo "\n";
-     echo '<meta property="og:description" content="' . get_bloginfo('description').  '" />';
-     echo "\n";
+     echo '<meta property="og:title" content="' .get_bloginfo('name'). '" />'; echo "\n";
+     echo '<meta property="og:description" content="' . get_bloginfo('description').  '" />'; echo "\n";
 }
 ?>
 <?php 

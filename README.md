@@ -238,3 +238,6 @@ alignleft, alignrightで画像に回り込みを設定した場合、641px以上
 
 ### ver 2.7.5
 + img 要素に自動で srcset 属性をつけて画像サイズを最適化する機能を停止。（chrome,Edgeで画像表示がバグる問題の対策）
+
+### ver 2.7.6
++ header.php, phpmodule/ogp.php において、title、og:title の出力パターンを修正

@@ -6,7 +6,7 @@
 	<meta name="format-detection" content="telephone=no">
 	<?php get_template_part('phpmodule/ogp');?>
 	
-	<title><?php wp_title(); if(is_front_page()){ bloginfo('description'); }?> | <?php bloginfo('name');?></title>
+	<title><?php wp_title("",true); if(is_front_page()){ bloginfo('description'); }?> | <?php bloginfo('name');?></title>
 
 <?php // if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
 
