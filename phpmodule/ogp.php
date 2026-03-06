@@ -15,7 +15,7 @@ if (is_front_page() || is_home()   ){
           echo '<meta name="description" content="'.get_the_excerpt().'" />'; echo "\n";
      endwhile; endif;
 } elseif(is_singular() && ! is_archive()) {
-          echo '<meta property="og:title" content="' .wp_title( "",false).  ' | '.get_bloginfo('name').' " /> '; echo "\n";
+          echo '<meta property="og:title" content="' .wp_title('|',false,'right')  .get_bloginfo('name').' " /> '; echo "\n";
           echo '<meta property="og:description" content="'.get_the_excerpt().'" />'; echo "\n";
           echo '<meta name="description" content="'.get_the_excerpt().'" />'; echo "\n";
 } else {

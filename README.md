@@ -1,4 +1,4 @@
-# kiwp-classic 2.7.3
+# kiwp-classic 2.7.7
 WordPressクラシックテーマ標準テンプレート
 
 ## 特徴
@@ -241,3 +241,6 @@ alignleft, alignrightで画像に回り込みを設定した場合、641px以上
 
 ### ver 2.7.6
 + header.php, phpmodule/ogp.php において、title、og:title の出力パターンを修正
+
+### ver 2.7.7
++ header.php, phpmodule/ogp.php において、title、og:title のタイトル内のHTMLタグを削除するを修正。
