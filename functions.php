@@ -322,6 +322,8 @@ function add_store_fields() {
     //第5引数はnormalの他にsideとadvancedがあります。
     //add_meta_box( 'HTML ID', 'ラベル', '関数名', '投稿タイプ', '表示方法');
     add_meta_box('kv', 'キービジュアル(SP)', 'page_kv_fields', array('page','post'), 'side');
+    add_meta_box('seotitle', 'SEOタイトル', 'seo_title_fields', array('page','post'), 'advanced');
+    add_meta_box('seoexcerpt', 'SEO概要', 'seo_excerpt_fields', array('page','post'), 'advanced');
 }
 add_action('admin_menu', 'add_store_fields');
 
@@ -331,16 +333,34 @@ function page_kv_fields() {
     if (get_post_meta($post->ID, 'page_kv', true)) {
         echo '<p><img src="'.get_post_meta($post->ID, 'page_kv', true).'" style="max-width:100%; height:auto;"></p>';
     }
-    echo '<p>URL:<input type="text" name="page_kv" value="'.get_post_meta($post->ID, 'page_kv', true).'" size="30" /></p><p>スマートフォン用キービジュアル画像のリンクURLを入力してください。</p>
+    echo '<p>URL:<input type="text" name="page_kv" value="'.get_post_meta($post->ID, 'page_kv', true).'" size="30" style="width:100%;" /></p><p>スマートフォン用キービジュアル画像のリンクURLを入力してください。</p>
     <p><label><input type="checkbox" name="page_kv_clear" value="clear">画像をクリアする</label></p>';
 }
+
+// SEO用タイトルの登録フィールド
+function seo_title_fields() {
+    global $post;
+    echo '<p><input type="text" name="seo_title" value="'.esc_html(get_post_meta($post->ID, 'seo_title', true)).'" size="120" style="width:100%;" /></p>';
+}
+// SEO用概要の登録フィールド
+function seo_excerpt_fields() {
+    global $post;
+    echo '<textarea name="seo_excerpt" style="width:100%;">'.esc_html(get_post_meta($post->ID, 'seo_excerpt', true)).'</textarea>';
+}
+
+//カスタムフィールドの保存
 function save_store_fields($post_id) {
-    //キービジュアルの保存
     if (!empty($_POST['page_kv'])) {
         update_post_meta($post_id, 'page_kv', $_POST['page_kv']);
     }
     if (!empty($_POST['page_kv_clear'])) {
         delete_post_meta($post_id, 'page_kv');
+    }
+    if (!empty($_POST['seo_title'])) {
+        update_post_meta($post_id, 'seo_title', $_POST['seo_title']);
+    }
+    if (!empty($_POST['seo_excerpt'])) {
+        update_post_meta($post_id, 'seo_excerpt', $_POST['seo_excerpt']);
     }
 }
 add_action('save_post', 'save_store_fields');

@@ -15,9 +15,19 @@ if (is_front_page() || is_home()   ){
           echo '<meta name="description" content="'.get_the_excerpt().'" />'; echo "\n";
      endwhile; endif;
 } elseif(is_singular() && ! is_archive()) {
-          echo '<meta property="og:title" content="' .wp_title('|',false,'right')  .get_bloginfo('name').' " /> '; echo "\n";
-          echo '<meta property="og:description" content="'.get_the_excerpt().'" />'; echo "\n";
-          echo '<meta name="description" content="'.get_the_excerpt().'" />'; echo "\n";
+          if( get_post_meta(get_the_ID(),'seo_title',true) ) {
+               $og_title = wp_strip_all_tags( get_post_meta(get_the_ID(),'seo_title', true) );
+          } else {
+               $og_title = wp_strip_all_tags( get_the_title()  );
+          }
+          if( get_post_meta(get_the_ID(),'seo_excerpt',true) ) {
+               $og_excerpt = wp_strip_all_tags( get_post_meta(get_the_ID(),'seo_excerpt', true)  );
+          } else {
+               $og_excerpt = wp_strip_all_tags( get_the_title()  );
+          }
+          echo '<meta property="og:title" content="' . $og_title .  ' | '.get_bloginfo('name').' " /> '; echo "\n";
+          echo '<meta property="og:description" content="'.$og_excerpt.'" />'; echo "\n";
+          echo '<meta name="description" content="'.$og_excerpt.'" />'; echo "\n";
 } else {
      echo '<meta property="og:title" content="' .get_bloginfo('name'). '" />'; echo "\n";
      echo '<meta property="og:description" content="' . get_bloginfo('description').  '" />'; echo "\n";

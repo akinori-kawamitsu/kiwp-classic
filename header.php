@@ -6,7 +6,17 @@
 	<meta name="format-detection" content="telephone=no">
 	<?php get_template_part('phpmodule/ogp');?>
 	
-	<title><?php wp_title('|',true,'right'); if(is_front_page()){ bloginfo('description'); }?><?php bloginfo('name');?></title>
+	<?php if(is_front_page()):?>
+	<title><?php bloginfo('description');?> | <?php bloginfo('name');?></title>
+	<?php else: ?>
+	<title><?php 
+		if(get_post_meta(get_the_ID(),'seo_title', true)) {
+			echo wp_strip_all_tags( get_post_meta(get_the_ID(),'seo_title', true) );
+		} else {
+			echo wp_strip_all_tags( get_the_title() ,true );
+		}?> | <?php bloginfo('name');?>
+	</title>
+	<?php endif;?>
 
 <?php // if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
 
