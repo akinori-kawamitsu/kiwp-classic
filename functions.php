@@ -1,7 +1,7 @@
 <?php
 load_theme_textdomain( 'ki-classic', get_template_directory() . '/languages/' );
 
-// Script and css in head
+// head 内でのCSSとjsの読み込み。
 function ki_classic_script() {
     $mtime = filemtime( get_stylesheet_directory() . '/style.css' );
     $mtime_reset = filemtime( get_stylesheet_directory() . '/css/reset.css' );
@@ -36,7 +36,7 @@ function action_navigation_menu_setup(){
 }
 add_action('after_setup_theme', 'action_navigation_menu_setup');
 
-// Enable widget
+// ウィジェットの有効化
 function ki_widgets_init() {
  register_sidebar(array(
  'name' => 'sidebar1',
@@ -56,7 +56,7 @@ function ki_widgets_init() {
 }
 add_action('widgets_init','ki_widgets_init');
 
-// Enable thumbnail image 
+// アイキャッチ画像の有効化と画像サイズの追加
 add_theme_support( 'post-thumbnails' );
 add_image_size( 'small', 400, 300, true );
 
@@ -66,19 +66,19 @@ add_post_type_support( 'page', 'excerpt' );
 // wp_head()からtitleタグの出力を削除
 remove_action('wp_head', '_wp_render_title_tag', 1);
 
-// Enable editor style
+// editor style の有効化
 add_editor_style('editor-style.css');
 
-// Enable title tag
+// title tag の有効化
 add_theme_support( 'title-tag' );
 
-// Enable rss feed links
+// RSSフィードへのリンクの有効化
 add_theme_support( 'automatic-feed-links' );
 
-// Enable using html5 at forms
+// フォームでの html5 の有効化
 add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 
-/* Enable custom header　*/
+/* custom header の有効化と設定 */
 add_theme_support('custom-header', array(
 	'default-image'			=> '',
 	'random-default'		=> false,
@@ -94,7 +94,7 @@ add_theme_support('custom-header', array(
 	'admin-preview-callback'=> '',
 ));
 
-// 画像のsrcsetを無効化。Chrome系バグ対策
+// 画像のsrcsetを無効化。
 add_filter('wp_calculate_image_srcset_meta', '__return_null');
 
 // Setting content width
@@ -102,11 +102,11 @@ if ( ! isset( $content_width ) ) $content_width = 960;
 
 // 抜粋の長さの変更
 function ki_excerpt_length($length) {
-	return 80;
+	return 100;
 }
 add_filter( 'excerpt_length', 'ki_excerpt_length', 999 );
 
-//　The list of categories
+//　カテゴリーリスト
 function ki_catlist() {
 	$kiexcat = get_category_by_slug('top') -> term_id;
 	echo '<ul class="sitemap">';
@@ -120,13 +120,13 @@ function ki_catlist() {
 }
 
 // wpautop（自動pタグ挿入）を無効化
-// remove_filter('the_content', 'wpautop');
-// remove_filter('the_excerpt', 'wpautop');
+remove_filter('the_content', 'wpautop');
+remove_filter('the_excerpt', 'wpautop');
 
 // Title tag
 
 /*
-	Get the current category or term in archive page.
+	一覧ページにおける現在のカテゴリーまたはタームの取得
 */
 function get_current_term(){
 	$id;
@@ -159,28 +159,30 @@ echo $term->description;
 echo $term->count; 
 */
 
-// Call page content by slug.
+// 固定ページのコンテンツをページスラッグで呼び出し
 function ki_page_content($pageslug) {
-	$kipage_query = new WP_Query(array('pagename' => $pageslug ));
+	$kipage_query = new WP_Query(array(
+		'name' => $pageslug,
+    	'post_type'	=> 'post',
+		));
 	if ($kipage_query -> have_posts()):  $kipage_query -> the_post();
 			the_content();
 		endif;
     wp_reset_postdata();
 }
 
-// Call page link by slug.
-// Call page link by slug.
+// 固定ページへのリンクをスラッグで呼び出し
 function ki_page_link($page_slug) {
 	echo get_permalink( get_page_by_path( $page_slug ) );
 }
 
-// Call category archive link by category slug.
+// カテゴリー一覧へのリンクをスラッグで呼び出し
 function ki_cat_link($cat_slug) {
 	$kicat_query = get_category_by_slug($cat_slug);
 	echo get_category_link($kicat_query->term_id); 
 }
 
-/* Breadcrumb navigation */
+/* パンくずリスト */
 function ki_breadcrumb($divOption = array("id" => "breadcrumb", "class" => "breadcrumb")){
 	global $post;
 	$text_home = esc_html__('home','ki-classic');
@@ -336,7 +338,6 @@ function page_kv_fields() {
     echo '<p>URL:<input type="text" name="page_kv" value="'.get_post_meta($post->ID, 'page_kv', true).'" size="30" style="width:100%;" /></p><p>スマートフォン用キービジュアル画像のリンクURLを入力してください。</p>
     <p><label><input type="checkbox" name="page_kv_clear" value="clear">画像をクリアする</label></p>';
 }
-
 // SEO用タイトルの登録フィールド
 function seo_title_fields() {
     global $post;
@@ -392,11 +393,17 @@ function ki_archive_tile($atts, $content = null) {
 }
 add_shortcode('cat-tile','ki_archive_tile');
 
-// 画像ディレクトリ [img file="" alt=""]
+// テーマの画像ディレクトリ [img file="" alt=""]
 function ki_img ($atts) {
 	$tag = '<img src="' .get_stylesheet_directory_uri(). '/img/'.$atts["file"]. ' alt="' .$atts["alt"]. ' " />';
 	return $tag;
 }
 add_shortcode('img','ki_img');
 
-// Theme customize admin menu
+/*　固定ページのコンテンツを出力 [page slug=""]または[page slug]*/
+function ki_page($pageslug, $content = null) {
+	ob_start();
+	include ( get_theme_root() . '/' . get_stylesheet() .'/phpmodule/page_contents.php');
+	return ob_get_clean();
+}
+add_shortcode('page','ki_page');

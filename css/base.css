@@ -195,6 +195,10 @@ p {
 	padding: 0;
 }
 
+p:empty {
+	display: none;
+}
+
 :where(a):link {
 	color: var(--color-link-text);
 	text-decoration: none;
